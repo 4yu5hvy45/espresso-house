@@ -498,6 +498,63 @@ footer{overflow:hidden;padding-top:clamp(40px,6vw,88px)}
 .sbar .btn.fill:hover{background:var(--linen);border-color:var(--linen)}
 @media (max-width:560px){.sbar .eyebrow{display:none}.sbar .r{width:100%}.sbar .btn{flex:1;justify-content:center}}
 footer{padding-bottom:calc(84px + env(safe-area-inset-bottom,0px))}
+
+/* ---------- phone ---------- */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+a,button,summary,label{touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+.mbtn{display:none;width:44px;height:44px;border-radius:50%;border:1.5px solid var(--espresso);background:none;cursor:pointer;position:relative;flex:none;padding:0}
+.mbtn span{position:absolute;left:12px;right:12px;height:1.5px;background:var(--espresso);transition:transform .45s var(--ease),top .45s var(--ease)}
+.mbtn span:nth-child(1){top:17px}.mbtn span:nth-child(2){top:25px}
+.mbtn.x span:nth-child(1){top:21px;transform:rotate(45deg)}
+.mbtn.x span:nth-child(2){top:21px;transform:rotate(-45deg)}
+.menu{position:fixed;inset:0;z-index:11;background:var(--espresso);color:var(--linen);padding:calc(env(safe-area-inset-top,0px) + var(--hh,72px) + 20px) max(24px,env(safe-area-inset-right,0px)) calc(24px + env(safe-area-inset-bottom,0px)) max(24px,env(safe-area-inset-left,0px));display:flex;flex-direction:column;justify-content:space-between;gap:24px;overflow-y:auto;clip-path:inset(0 0 100% 0);transition:clip-path .65s var(--draw)}
+.menu.open{clip-path:inset(0)}
+.menu[hidden]{display:none}
+.menu .l{display:block;font-family:var(--display);font-weight:500;font-size:clamp(2.2rem,10.5vw,3.6rem);line-height:1.12;padding:8px 0;border-bottom:1px solid var(--roast);text-decoration:none;color:var(--linen)}
+.menu .l:active{color:var(--crema)}
+.menu.open .l{animation:rise .7s var(--ease) both}
+.menu.open .l:nth-child(1){animation-delay:.12s}.menu.open .l:nth-child(2){animation-delay:.17s}.menu.open .l:nth-child(3){animation-delay:.22s}.menu.open .l:nth-child(4){animation-delay:.27s}.menu.open .l:nth-child(5){animation-delay:.32s}.menu.open .l:nth-child(6){animation-delay:.37s}.menu.open .l:nth-child(7){animation-delay:.42s}
+.menu-foot{display:grid;gap:14px}
+.menu-foot .btn{justify-content:center;border-color:var(--crema);background-color:var(--crema);color:var(--espresso)}
+.menu-foot p{color:var(--sand);font-size:15px;text-align:center;max-width:none}
+.menu-foot b{color:var(--linen)}
+.menu-open .sbar{transform:translateY(110%)!important;visibility:hidden!important}
+@media (max-width:1100px){.mbtn{display:block}.nav{gap:12px}}
+.viewer .stage{touch-action:pan-y}
+@media (max-width:820px){
+  section{padding-block:64px}
+  .sechead{margin-bottom:36px;gap:16px}
+  .big{font-size:clamp(1.7rem,7vw,2.3rem)}
+  .pillar,.pillar+.pillar{padding:22px 0}
+  .pillars{margin-top:40px}
+  body::after{display:none}
+  .eyebrow{font-size:12px}
+  .fp figcaption .eyebrow{font-size:11px}
+  .badge{font-size:11px}
+  .recipe .side{font-size:12px}
+  .brand{min-height:44px;display:flex;align-items:center}
+  .tab{min-height:44px;padding-inline:18px}
+  .btn{min-height:44px}
+  .studio .ph{aspect-ratio:4/3}
+  .hrow .lede{font-size:1.05rem}
+  .film-head{padding-top:56px}
+  .walks strong{font-size:1.9rem}
+  .timer{padding:20px}
+  .fm{padding:22px 18px;border-radius:22px}
+  .fm .acts .btn{flex:1;justify-content:center}
+  .finale h2{margin-top:28px}
+  .wmap{margin-top:36px}
+  /* rooms become a swipeable row of cards */
+  .rooms-list{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;margin-inline:calc(-1 * max(16px,env(safe-area-inset-left,0px)));padding:4px max(16px,env(safe-area-inset-left,0px)) 14px;scrollbar-width:none}
+  .rooms-list::-webkit-scrollbar{display:none}
+  .rm,.rm:first-child{flex:none;width:min(84vw,360px);scroll-snap-align:center;border:1px solid var(--card-border);border-radius:24px;background:var(--card);padding:14px 14px 22px;display:flex;flex-direction:column;min-height:0;opacity:1}
+  .rm .inl{order:-1;margin:0 0 16px;border-radius:16px}
+  .rm h3{font-size:2rem}
+  .rm .eyebrow{margin-top:2px}
+  .rm .tags{margin-top:16px}
+  .rooms-hint{display:block}
+}
+.rooms-hint{display:none;margin-top:6px;font-style:italic;color:var(--roast);font-size:15px}
 /* ---------- viewer ---------- */
 .viewer{position:fixed;inset:0;z-index:40;background:rgba(46,31,20,.97);color:var(--linen);display:grid;grid-template-rows:auto minmax(0,1fr) auto;padding:calc(16px + env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) calc(16px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
 .viewer[hidden]{display:none}
@@ -546,9 +603,26 @@ footer{padding-bottom:calc(84px + env(safe-area-inset-bottom,0px))}
       <a class="l" href="#around">Around you</a>
       <a class="l" href="#enquire">Enquire</a>
       <a class="btn fill" href="https://www.airbnb.co.uk/rooms/1792507632192727625" target="_blank" rel="noopener">Book a stay</a>
+      <button class="mbtn" id="mbtn" type="button" aria-expanded="false" aria-controls="menu" aria-label="Open menu"><span></span><span></span></button>
     </nav>
   </div>
 </header>
+
+<nav class="menu" id="menu" aria-label="Menu" hidden>
+  <div class="menu-in">
+    <a class="l" href="#stay">The stay</a>
+    <a class="l" href="#gallery">Gallery</a>
+    <a class="l" href="#brew">The brew</a>
+    <a class="l" href="#rooms">Rooms</a>
+    <a class="l" href="#studio">Studio</a>
+    <a class="l" href="#around">Around you</a>
+    <a class="l" href="#enquire">Enquire</a>
+  </div>
+  <div class="menu-foot">
+    <a class="btn fill" href="https://www.airbnb.co.uk/rooms/1792507632192727625" target="_blank" rel="noopener">Check dates on Airbnb</a>
+    <p>Call <b>7000053900</b> · WhatsApp <b>9479419712</b></p>
+  </div>
+</nav>
 
 <main id="home">
   <!-- ======== HERO ======== -->
@@ -577,7 +651,7 @@ footer{padding-bottom:calc(84px + env(safe-area-inset-bottom,0px))}
               </div>
             </div>
             <div class="hside rise" style="animation-delay:1.25s">
-              <div class="thumbs"><img src="img/bed1.jpg" alt="" loading="lazy"><img src="img/kitchen.jpg" alt="" loading="lazy"></div>
+              <div class="thumbs"><img src="img/bed1.jpg" srcset="img/s/bed1.jpg 720w" sizes="110px" decoding="async" alt="" loading="lazy"><img src="img/kitchen.jpg" srcset="img/s/kitchen.jpg 720w" sizes="110px" decoding="async" alt="" loading="lazy"></div>
               <div class="stat"><b>4.98<small>★</small></b><span>Host rating<br>Superhost</span></div>
             </div>
           </div>
@@ -641,23 +715,23 @@ footer{padding-bottom:calc(84px + env(safe-area-inset-bottom,0px))}
           <p>Nine plates from the apartment. Keep scrolling to move along the strip, and select one to see it full size.</p>
         </div>
         <div class="film-track" id="ftrack">
-          <figure class="plate fp land" tabindex="0"><div class="bracket"><div class="frame"><img src="img/living.jpg" alt="Living room with mustard sofa and orange armchair" loading="lazy"></div></div>
+          <figure class="plate fp land" tabindex="0"><div class="bracket"><div class="frame"><img src="img/living.jpg" srcset="img/s/living.jpg 960w, img/living.jpg 1600w" sizes="(max-width:820px) 88vw, 560px" decoding="async" alt="Living room with mustard sofa and orange armchair" loading="lazy"></div></div>
             <figcaption><b>The living room</b><span class="eyebrow">Plate 01</span></figcaption><span class="d">Corduroy sofa, origami pendant, a 50-inch 4K TV and park light through sheer linen.</span></figure>
-          <figure class="plate fp" tabindex="0"><div class="bracket"><div class="frame"><img src="img/bar.jpg" alt="Walnut breakfast bar with two black stools" loading="lazy"></div></div>
+          <figure class="plate fp" tabindex="0"><div class="bracket"><div class="frame"><img src="img/bar.jpg" srcset="img/s/bar.jpg 720w, img/bar.jpg 1200w" sizes="(max-width:820px) 88vw, 560px" decoding="async" alt="Walnut breakfast bar with two black stools" loading="lazy"></div></div>
             <figcaption><b>The bar</b><span class="eyebrow">Plate 02</span></figcaption><span class="d">Walnut counter, two stools, water on a wooden tray.</span></figure>
-          <figure class="plate fp land" tabindex="0"><div class="bracket"><div class="frame"><img src="img/kitchen.jpg" alt="Galley kitchen with dark granite counter, looking through to the living room" loading="lazy"></div></div>
+          <figure class="plate fp land" tabindex="0"><div class="bracket"><div class="frame"><img src="img/kitchen.jpg" srcset="img/s/kitchen.jpg 720w, img/kitchen.jpg 1200w" sizes="(max-width:820px) 88vw, 560px" decoding="async" alt="Galley kitchen with dark granite counter, looking through to the living room" loading="lazy"></div></div>
             <figcaption><b>The kitchen</b><span class="eyebrow">Plate 03</span></figcaption><span class="d">Induction cooktop, chimney, mini fridge and RO+UV drinking water.</span></figure>
-          <figure class="plate fp" tabindex="0"><div class="bracket"><div class="frame"><img src="img/desk.jpg" alt="A wooden desk at an open window, trees outside and leaf shadows on the wall" loading="lazy"></div></div>
+          <figure class="plate fp" tabindex="0"><div class="bracket"><div class="frame"><img src="img/desk.jpg" srcset="img/s/desk.jpg 720w, img/desk.jpg 1200w" sizes="(max-width:820px) 88vw, 560px" decoding="async" alt="A wooden desk at an open window, trees outside and leaf shadows on the wall" loading="lazy"></div></div>
             <figcaption><b>The desk</b><span class="eyebrow">Plate 04</span></figcaption><span class="d">Morning sun, leaf shadows and an open window onto the trees.</span></figure>
-          <figure class="plate fp" tabindex="0"><div class="bracket"><div class="frame"><img src="img/lamp.jpg" alt="A glowing amber pleated pendant lamp beside a striped bed" loading="lazy"></div></div>
+          <figure class="plate fp" tabindex="0"><div class="bracket"><div class="frame"><img src="img/lamp.jpg" srcset="img/s/lamp.jpg 720w, img/lamp.jpg 1200w" sizes="(max-width:820px) 88vw, 560px" decoding="async" alt="A glowing amber pleated pendant lamp beside a striped bed" loading="lazy"></div></div>
             <figcaption><b>Amber</b><span class="eyebrow">Plate 05</span></figcaption><span class="d">The pleated pendant, after dark.</span></figure>
-          <figure class="plate fp" tabindex="0"><div class="bracket"><div class="frame"><img src="img/bed1.jpg" alt="A king bed with striped linen, an amber pendant and a shelf of frames" loading="lazy"></div></div>
+          <figure class="plate fp" tabindex="0"><div class="bracket"><div class="frame"><img src="img/bed1.jpg" srcset="img/s/bed1.jpg 720w, img/bed1.jpg 1200w" sizes="(max-width:820px) 88vw, 560px" decoding="async" alt="A king bed with striped linen, an amber pendant and a shelf of frames" loading="lazy"></div></div>
             <figcaption><b>Bedroom one</b><span class="eyebrow">Plate 06</span></figcaption><span class="d">King bed, striped linen, a shelf of frames.</span></figure>
-          <figure class="plate fp land" tabindex="0"><div class="bracket"><div class="frame"><img src="img/bed1-wide.jpg" alt="Bedroom with a wavy mirror, coat rack and a desk by the window" loading="lazy"></div></div>
+          <figure class="plate fp land" tabindex="0"><div class="bracket"><div class="frame"><img src="img/bed1-wide.jpg" srcset="img/s/bed1-wide.jpg 720w, img/bed1-wide.jpg 1200w" sizes="(max-width:820px) 88vw, 560px" decoding="async" alt="Bedroom with a wavy mirror, coat rack and a desk by the window" loading="lazy"></div></div>
             <figcaption><b>Bedroom two</b><span class="eyebrow">Plate 07</span></figcaption><span class="d">Wavy mirror, coat rack, a desk by the trees.</span></figure>
-          <figure class="plate fp" tabindex="0"><div class="bracket"><div class="frame"><img src="img/bed2.jpg" alt="A king bed with grey linen and striped cushions under two wall lights" loading="lazy"></div></div>
+          <figure class="plate fp" tabindex="0"><div class="bracket"><div class="frame"><img src="img/bed2.jpg" srcset="img/s/bed2.jpg 720w, img/bed2.jpg 1200w" sizes="(max-width:820px) 88vw, 560px" decoding="async" alt="A king bed with grey linen and striped cushions under two wall lights" loading="lazy"></div></div>
             <figcaption><b>Grey hour</b><span class="eyebrow">Plate 08</span></figcaption><span class="d">King bed, two reading lights, roman blinds.</span></figure>
-          <figure class="plate fp" tabindex="0"><div class="bracket"><div class="frame"><img src="img/bath2.jpg" alt="Bathroom with a wall-hung toilet and marble-effect tiles" loading="lazy"></div></div>
+          <figure class="plate fp" tabindex="0"><div class="bracket"><div class="frame"><img src="img/bath2.jpg" srcset="img/s/bath2.jpg 720w, img/bath2.jpg 1200w" sizes="(max-width:820px) 88vw, 560px" decoding="async" alt="Bathroom with a wall-hung toilet and marble-effect tiles" loading="lazy"></div></div>
             <figcaption><b>The washroom</b><span class="eyebrow">Plate 09</span></figcaption><span class="d">One of two, both stocked with toiletries.</span></figure>
         </div>
         <div class="wrap film-bar">
@@ -685,9 +759,9 @@ footer{padding-bottom:calc(84px + env(safe-area-inset-bottom,0px))}
         <a class="btn" href="https://instagram.com/clicksandbrewws" target="_blank" rel="noopener">@clicksandbrewws <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 11 11 3M5 3h6v6"/></svg></a>
       </div>
       <div class="pols">
-        <figure class="pola p1" data-par="-.06"><img src="img/mirror.jpg" alt="A wavy mirror on a bedroom wall" loading="lazy"><figcaption>Bedroom</figcaption></figure>
-        <figure class="pola p2" data-par=".05"><img src="img/lamp.jpg" alt="An amber pendant lamp glowing beside the bed" loading="lazy"><figcaption>Amber</figcaption></figure>
-        <figure class="pola p3" data-par="-.1"><img src="img/bed2.jpg" alt="A king bed with grey linen under two wall lights" loading="lazy"><figcaption>Grey hour</figcaption></figure>
+        <figure class="pola p1" data-par="-.06"><img src="img/mirror.jpg" srcset="img/s/mirror.jpg 720w, img/mirror.jpg 1200w" sizes="(max-width:820px) 88vw, 560px" decoding="async" alt="A wavy mirror on a bedroom wall" loading="lazy"><figcaption>Bedroom</figcaption></figure>
+        <figure class="pola p2" data-par=".05"><img src="img/lamp.jpg" srcset="img/s/lamp.jpg 720w, img/lamp.jpg 1200w" sizes="(max-width:820px) 88vw, 560px" decoding="async" alt="An amber pendant lamp glowing beside the bed" loading="lazy"><figcaption>Amber</figcaption></figure>
+        <figure class="pola p3" data-par="-.1"><img src="img/bed2.jpg" srcset="img/s/bed2.jpg 720w, img/bed2.jpg 1200w" sizes="(max-width:820px) 88vw, 560px" decoding="async" alt="A king bed with grey linen under two wall lights" loading="lazy"><figcaption>Grey hour</figcaption></figure>
       </div>
     </div>
   </section>
@@ -763,59 +837,60 @@ footer{padding-bottom:calc(84px + env(safe-area-inset-bottom,0px))}
             <h3>Warm and inviting</h3>
             <p>Ambient lighting, a 50-inch 4K TV and air conditioning. The small balcony opens onto a green public park, so the room has a pleasant garden view.</p>
             <div class="tags"><span class="tag">50-inch 4K TV</span><span class="tag">AC</span><span class="tag">Balcony</span><span class="tag">Park view</span></div>
-            <img class="inl" src="img/living.jpg" alt="" loading="lazy">
+            <img class="inl" src="img/living.jpg" srcset="img/s/living.jpg 960w, img/living.jpg 1600w" sizes="(max-width:820px) 88vw, 560px" decoding="async" alt="" loading="lazy">
           </article>
           <article class="rm" data-i="1" data-name="The kitchen">
             <span class="eyebrow">Kitchen</span>
             <h3>Open-plan and ready</h3>
             <p>Attached to the living room, with all the basic essentials for cooking: an induction cooktop, chimney, mini refrigerator and an Aquaguard RO+UV purifier for 24/7 drinking water.</p>
             <div class="tags"><span class="tag">Induction cooktop</span><span class="tag">Chimney</span><span class="tag">Mini fridge</span><span class="tag">RO+UV water</span></div>
-            <img class="inl" src="img/kitchen.jpg" alt="" loading="lazy">
+            <img class="inl" src="img/kitchen.jpg" srcset="img/s/kitchen.jpg 720w, img/kitchen.jpg 1200w" sizes="(max-width:820px) 88vw, 560px" decoding="async" alt="" loading="lazy">
           </article>
           <article class="rm" data-i="2" data-name="The coffee station">
             <span class="eyebrow">Coffee station</span>
             <h3>A small corner to brew</h3>
             <p>Manual brew equipment and a picture guide, so you can experiment at your own pace. The full guide is further up this page.</p>
             <div class="tags"><span class="tag">French press</span><span class="tag">Brew guide</span></div>
-            <img class="inl" src="img/bar.jpg" alt="" loading="lazy">
+            <img class="inl" src="img/bar.jpg" srcset="img/s/bar.jpg 720w, img/bar.jpg 1200w" sizes="(max-width:820px) 88vw, 560px" decoding="async" alt="" loading="lazy">
           </article>
           <article class="rm" data-i="3" data-name="Bedroom one">
             <span class="eyebrow">Bedroom one</span>
             <h3>Quiet, with natural light</h3>
             <p>Comfortable bedding on a king bed, its own AC, a full-length mirror and a luggage rack. Well ventilated, with plenty of daylight.</p>
             <div class="tags"><span class="tag">King bed</span><span class="tag">AC</span><span class="tag">Full-length mirror</span><span class="tag">Luggage rack</span></div>
-            <img class="inl" src="img/bed1.jpg" alt="" loading="lazy">
+            <img class="inl" src="img/bed1.jpg" srcset="img/s/bed1.jpg 720w, img/bed1.jpg 1200w" sizes="(max-width:820px) 88vw, 560px" decoding="async" alt="" loading="lazy">
           </article>
           <article class="rm" data-i="4" data-name="Bedroom two">
             <span class="eyebrow">Bedroom two</span>
             <h3>With a desk by the trees</h3>
             <p>The same comforts, plus a work desk by the window, which makes it a good place to get remote work done.</p>
             <div class="tags"><span class="tag">King bed</span><span class="tag">AC</span><span class="tag">Work desk</span><span class="tag">Wi-Fi</span></div>
-            <img class="inl" src="img/bed1-wide.jpg" alt="" loading="lazy">
+            <img class="inl" src="img/bed1-wide.jpg" srcset="img/s/bed1-wide.jpg 720w, img/bed1-wide.jpg 1200w" sizes="(max-width:820px) 88vw, 560px" decoding="async" alt="" loading="lazy">
           </article>
           <article class="rm" data-i="5" data-name="The washrooms">
             <span class="eyebrow">Washrooms</span>
             <h3>Two, both stocked</h3>
             <p>One is attached to the living room and one to a bedroom. Both come with all the essential toiletries.</p>
             <div class="tags"><span class="tag">2 washrooms</span><span class="tag">Toiletries</span><span class="tag">Hairdryer</span></div>
-            <img class="inl" src="img/bath1.jpg" alt="" loading="lazy">
+            <img class="inl" src="img/bath1.jpg" srcset="img/s/bath1.jpg 720w, img/bath1.jpg 1200w" sizes="(max-width:820px) 88vw, 560px" decoding="async" alt="" loading="lazy">
           </article>
           <article class="rm" data-i="6" data-name="Park and street">
             <span class="eyebrow">Outside</span>
             <h3>A park, then the cafes</h3>
             <p>The living room overlooks a leafy public park, good for evening strolls. A dedicated parking spot is free of charge, subject to availability, with ample safe and legal street parking nearby.</p>
             <div class="tags"><span class="tag">Free parking</span><span class="tag">Park view</span><span class="tag">Self check-in</span></div>
-            <img class="inl" src="img/desk.jpg" alt="" loading="lazy">
+            <img class="inl" src="img/desk.jpg" srcset="img/s/desk.jpg 720w, img/desk.jpg 1200w" sizes="(max-width:820px) 88vw, 560px" decoding="async" alt="" loading="lazy">
           </article>
         </div>
+        <p class="rooms-hint">Swipe for the next room.</p>
         <div class="rooms-ph" id="rph" aria-hidden="true">
-          <img class="act" src="img/living.jpg" alt="" loading="lazy">
-          <img src="img/kitchen.jpg" alt="" loading="lazy">
-          <img src="img/bar.jpg" alt="" loading="lazy">
-          <img src="img/bed1.jpg" alt="" loading="lazy">
-          <img src="img/bed1-wide.jpg" alt="" loading="lazy">
-          <img src="img/bath1.jpg" alt="" loading="lazy">
-          <img src="img/desk.jpg" alt="" loading="lazy">
+          <img class="act" src="img/living.jpg" srcset="img/s/living.jpg 960w, img/living.jpg 1600w" sizes="(max-width:820px) 88vw, 560px" decoding="async" alt="" loading="lazy">
+          <img src="img/kitchen.jpg" srcset="img/s/kitchen.jpg 720w, img/kitchen.jpg 1200w" sizes="(max-width:820px) 88vw, 560px" decoding="async" alt="" loading="lazy">
+          <img src="img/bar.jpg" srcset="img/s/bar.jpg 720w, img/bar.jpg 1200w" sizes="(max-width:820px) 88vw, 560px" decoding="async" alt="" loading="lazy">
+          <img src="img/bed1.jpg" srcset="img/s/bed1.jpg 720w, img/bed1.jpg 1200w" sizes="(max-width:820px) 88vw, 560px" decoding="async" alt="" loading="lazy">
+          <img src="img/bed1-wide.jpg" srcset="img/s/bed1-wide.jpg 720w, img/bed1-wide.jpg 1200w" sizes="(max-width:820px) 88vw, 560px" decoding="async" alt="" loading="lazy">
+          <img src="img/bath1.jpg" srcset="img/s/bath1.jpg 720w, img/bath1.jpg 1200w" sizes="(max-width:820px) 88vw, 560px" decoding="async" alt="" loading="lazy">
+          <img src="img/desk.jpg" srcset="img/s/desk.jpg 720w, img/desk.jpg 1200w" sizes="(max-width:820px) 88vw, 560px" decoding="async" alt="" loading="lazy">
           <span class="rcap" id="rcap">The living room · 1 / 7</span>
         </div>
       </div>
@@ -831,7 +906,7 @@ footer{padding-bottom:calc(84px + env(safe-area-inset-bottom,0px))}
         <p>Park-facing windows, sheer curtains for soft daylight, track spots and a room already styled in colour.</p>
       </div>
       <div class="studio">
-        <div class="ph"><img src="img/door.jpg" alt="View from a bedroom through a doorway into the bright living room" loading="lazy"></div>
+        <div class="ph"><img src="img/door.jpg" srcset="img/s/door.jpg 720w, img/door.jpg 1200w" sizes="(max-width:820px) 88vw, 560px" decoding="async" alt="View from a bedroom through a doorway into the bright living room" loading="lazy"></div>
         <div>
           <div class="fmt">
             <svg class="ic" viewBox="0 0 56 56" aria-hidden="true"><rect class="s f4" x="21" y="8" width="14" height="24" rx="7"/><path class="s" d="M15 26a13 13 0 0 0 26 0M28 39v8M21 47h14"/><g class="a-wave"><path class="s" d="M8 22c-2 4-2 8 0 12"/><path class="s" d="M48 22c2 4 2 8 0 12"/><path class="s" d="M4 18c-3 6-3 14 0 20"/></g></svg>
@@ -1035,6 +1110,22 @@ footer{padding-bottom:calc(84px + env(safe-area-inset-bottom,0px))}
   if(!reduce && window.Lenis){
     try{ lenis=new Lenis({duration:1.15,easing:function(t){return Math.min(1,1.001-Math.pow(2,-10*t));},touchMultiplier:1.4}); }catch(e){ lenis=null; }
   }
+
+  /* mobile menu */
+  var mbtn=document.getElementById('mbtn'), menu=document.getElementById('menu'), menuOpen=false;
+  function setMenu(open){
+    if(open===menuOpen||!menu) return; menuOpen=open;
+    mbtn.classList.toggle('x',open); mbtn.setAttribute('aria-expanded',open); mbtn.setAttribute('aria-label',open?'Close menu':'Open menu');
+    root.classList.toggle('menu-open',open);
+    if(open){ menu.hidden=false; void menu.offsetWidth; menu.classList.add('open'); if(lenis) lenis.stop(); document.body.style.overflow='hidden'; }
+    else { menu.classList.remove('open'); if(lenis) lenis.start(); document.body.style.overflow=''; setTimeout(function(){ if(!menuOpen) menu.hidden=true; },680); }
+  }
+  if(mbtn){
+    mbtn.addEventListener('click',function(){ setMenu(!menuOpen); });
+    qa('a',menu).forEach(function(a){ a.addEventListener('click',function(){ setMenu(false); }); });
+    document.addEventListener('keydown',function(e){ if(e.key==='Escape') setMenu(false); });
+    window.addEventListener('resize',function(){ if(window.innerWidth>1100) setMenu(false); });
+  }
   qa('a[href^="#"]').forEach(function(a){
     a.addEventListener('click',function(e){
       var id=a.getAttribute('href'); if(!id||id.length<2) return;
@@ -1170,7 +1261,15 @@ footer{padding-bottom:calc(84px + env(safe-area-inset-bottom,0px))}
     /* cursor label */
     if(fine){ cx+=(tx-cx)*.2; cy+=(ty-cy)*.2; cs+=((overPlate?1:0)-cs)*.18; cur.style.transform='translate3d('+cx.toFixed(1)+'px,'+cy.toFixed(1)+'px,0) scale('+cs.toFixed(3)+')'; }
   }
-  function loop(t){ if(lenis) lenis.raf(t); frame(window.scrollY); requestAnimationFrame(loop); }
+  var idle=0, running=false;
+  function loop(t){
+    if(lenis) lenis.raf(t);
+    var y=window.scrollY, moving=y!==lastY||(lenis&&lenis.isScrolling)||overPlate||Math.abs(cs)>.01;
+    frame(y); idle=moving?0:idle+1;
+    if(idle<90){ requestAnimationFrame(loop); } else { running=false; }
+  }
+  function wake(){ idle=0; if(!running && !reduce){ running=true; requestAnimationFrame(loop); } }
+  ['scroll','wheel','touchstart','touchmove','pointermove','keydown','resize'].forEach(function(ev){ window.addEventListener(ev,wake,{passive:true}); });
   function relayout(){ vh=window.innerHeight; vw=window.innerWidth; measure(); measureM(); lastY=-1;
     var ws=q('.wmap-scroll'); if(ws && ws.scrollWidth>ws.clientWidth && !ws.getAttribute('data-c')){ ws.scrollLeft=.19*ws.scrollWidth; ws.setAttribute('data-c','1'); } }
   window.addEventListener('resize',relayout);
@@ -1179,7 +1278,7 @@ footer{padding-bottom:calc(84px + env(safe-area-inset-bottom,0px))}
   relayout();
   if(reduce){
     window.addEventListener('scroll',hairline,{passive:true}); hairline();
-  } else { requestAnimationFrame(loop); }
+  } else { wake(); }
 
   /* enquiry form: builds a WhatsApp message */
   var f=document.getElementById('enqf');
@@ -1259,6 +1358,10 @@ footer{padding-bottom:calc(84px + env(safe-area-inset-bottom,0px))}
   function open(i){ last=document.activeElement; show(i); v.hidden=false; document.body.style.overflow='hidden'; sbar.classList.remove('show'); if(lenis) lenis.stop(); cur.classList.remove('show'); document.getElementById('vclose').focus(); }
   function close(){ v.hidden=true; document.body.style.overflow=''; hairline(); if(lenis) lenis.start(); if(last) last.focus({preventScroll:true}); }
   plates.forEach(function(p,i){ p.addEventListener('click',function(){open(i)}); p.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); open(i); } }); });
+  
+  var tsx=null; var stg=q('.viewer .stage');
+  stg.addEventListener('touchstart',function(e){ tsx=e.touches[0].clientX; },{passive:true});
+  stg.addEventListener('touchend',function(e){ if(tsx===null) return; var dx=e.changedTouches[0].clientX-tsx; tsx=null; if(Math.abs(dx)>50){ show(cur2+(dx<0?1:-1)); } },{passive:true});
   document.getElementById('vclose').onclick=close;
   document.getElementById('vprev').onclick=function(){show(cur2-1)};
   document.getElementById('vnext').onclick=function(){show(cur2+1)};
