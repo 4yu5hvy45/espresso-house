@@ -2,7 +2,7 @@
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..600&family=Newsreader:ital,opsz,wght@0,6..72,300..500;1,6..72,300..500&display=swap">
 <style>
 /* Layout concept: the guest sheets, grown into a house. Paper pages with ruled rows and a
    //ESPRESSO HOUSE// eyebrow, interrupted by one Espresso room for the brew. Motion is drawn line work:
@@ -573,6 +573,243 @@ a,button,summary,label{touch-action:manipulation;-webkit-tap-highlight-color:tra
   .marq-track{transform:none!important}
   .wisp path,.a-steam path{opacity:0}
 }
+/* ================= v8 · premium direction =================
+   Warmer paper, deeper espresso, rust and honey accents (cues from the Ferea and Pinned references).
+   Light, oversized Cormorant for display; Instrument Sans for small tracked labels; EB Garamond for reading.
+   Square, editorial corners; full-bleed hero; a dark cinematic gallery. */
+:root{
+  --paper:#f3eee6; --card:#f9f5ee; --card-border:#e3d8c6; --hairline:#d8cab6;
+  --espresso:#20140d; --espresso-2:#2e1f16; --roast:#54402f; --bean:#7e4826; --caramel:#ac6d36; --crema:#dba868; --sand:#d8c5a8; --linen:#f1e7d6;
+  --ui:"Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+body{font-size:19px}
+.eyebrow,.btn,.tab,.tag,.chip,.badge,.opt span,.fld>label,.fld>legend,.fm legend,.nav a.l,.rooms-ph .rcap,.cur,.recipe .side,.row .m,.stat span,.fp figcaption b,.step .n{font-family:var(--ui)}
+.eyebrow{font-weight:500;font-size:11px;letter-spacing:.24em}
+.eyebrow i{opacity:.55}
+/* display type: lighter, larger, tighter */
+h1,h2,h3{font-weight:400}
+h2{font-size:clamp(2.9rem,7.4vw,6.6rem);font-weight:300;letter-spacing:-.03em;line-height:.93}
+h2 em,h1 em{font-weight:300}
+h3{letter-spacing:-.01em}
+.big{font-weight:300;font-size:clamp(2rem,4.9vw,4.5rem);line-height:1.06;letter-spacing:-.02em;max-width:27ch}
+.stat b,.marq span,.qty b,.dial output,.row b,.facts strong,.walks strong,.bt strong,.finale .host strong,.menu .l,.faq summary,.bigmark,.pillar h3,.rm h3,.step h3{font-weight:400}
+.marq span,.bt strong,.facts strong{font-weight:300;letter-spacing:-.02em}
+.step h3{font-weight:500}
+p{line-height:1.62}
+/* small caps-style UI */
+.btn{font-weight:500;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;padding:15px 26px;border-width:1px}
+.nav .btn,.sbar .btn{padding:11px 20px;font-size:11px}
+.nav a.l{font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:500}
+.tab,.opt span{font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:500;border-width:1px;background:transparent}
+.tab[aria-selected="true"],.opt input:checked+span{background:var(--espresso)}
+.tag{font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:500;border-width:1px;background:transparent;border-color:var(--hairline);padding:7px 13px}
+.badge{font-weight:500;letter-spacing:.16em}
+.row .m{font-weight:500;letter-spacing:.06em}
+.cur{background:var(--crema);color:var(--espresso);font-weight:500;letter-spacing:.2em}
+.mapsvg .rn,.mapsvg .ps,.mapsvg .bd text,.mapsvg .sc text{font-family:var(--ui);font-weight:500}
+.mapsvg .pl{font-weight:500}
+/* header: quiet, hairline */
+.top{background:rgba(243,238,230,.92);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
+body::before{background:var(--paper)}
+.brand .eyebrow{font-size:10px}
+/* corners: editorial, almost square */
+.btn,.tab,.opt span,.tag,.chip,.badge{border-radius:2px}
+.bt,.fm,.wmap-scroll,.rooms-ph,.stat,.thumbs{border-radius:3px}
+.thumbs img{border-radius:1px}
+.rooms-ph .rcap{border-radius:2px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;font-size:11px}
+.fm input[type=text],.fm input[type=date],.fm input[type=number],.fm textarea,.pv{border-radius:2px;border-width:1px}
+.mbtn{border-radius:2px;border-width:1px}
+/* hero: full bleed, taller, cinematic */
+.hero{padding-block:0}
+.hero .wrap.wide{max-width:none;padding-inline:0}
+.hcard{border-radius:0;min-height:clamp(620px,calc(100svh - 74px),1040px)}
+.hcard::before{inset:clamp(12px,1.6vw,24px);border-radius:0;border-color:rgba(241,231,214,.22)}
+.hcard::after{background:radial-gradient(120% 90% at 50% 38%,rgba(20,12,7,0) 30%,rgba(20,12,7,.5) 100%),linear-gradient(180deg,rgba(20,12,7,.55) 0%,rgba(20,12,7,.05) 24%,rgba(20,12,7,.3) 44%,rgba(20,12,7,.92) 100%)}
+.htop,.hbot{padding-inline:clamp(28px,4.4vw,72px)}
+.htop{padding-top:clamp(28px,4vw,56px)}
+.hbot{padding-bottom:clamp(28px,4vw,56px)}
+.hcard h1{font-weight:300;font-size:clamp(3.4rem,10.4vw,11rem);line-height:.86;letter-spacing:-.035em;text-shadow:none}
+.hcard h1 em{font-weight:300;color:var(--crema)}
+.hrow .lede{font-size:clamp(1.1rem,1.5vw,1.3rem);max-width:40ch;line-height:1.5}
+.chip{background:rgba(32,20,13,.35);border-color:rgba(241,231,214,.28);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;padding:9px 14px}
+.thumbs{background:rgba(32,20,13,.35);border-color:rgba(241,231,214,.28);padding:6px;gap:6px}
+.stat{background:var(--paper);padding:16px 22px}
+.stat b{font-weight:300}
+.stat span{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--roast);line-height:1.5}
+.hcard .btn.fill{background:var(--crema);border-color:var(--crema)}
+/* section rhythm */
+section{padding-block:clamp(96px,13vw,190px)}
+.sechead{align-items:end}
+.sechead p{font-size:17.5px}
+.marq{border-block:1px solid var(--espresso)}
+.marq span{font-size:clamp(3rem,8vw,7.4rem)}
+.pillars,.facts,.details,.rules ul,.list,.faq,.fmt:first-of-type,.rm:first-child{border-top-width:1px}
+.pillar h3{font-size:clamp(2.2rem,3.8vw,3.2rem);font-weight:300}
+.rm h3{font-weight:300;font-size:clamp(2.4rem,4.6vw,4rem);letter-spacing:-.02em}
+/* gallery: dark, cinematic */
+.film{background:var(--espresso);color:var(--linen)}
+.film .eyebrow{color:var(--crema)}
+.film h2 em{color:var(--crema)}
+.film-head p,.fp .d{color:var(--sand)}
+.fp .frame{background:var(--espresso-2)}
+.fp figcaption b{font-weight:500;font-size:12px;letter-spacing:.16em;text-transform:uppercase}
+.fp figcaption .eyebrow{color:var(--sand)}
+.bracket{--bk:var(--crema);background:
+  linear-gradient(var(--bk),var(--bk)) top left/20px 1px no-repeat,linear-gradient(var(--bk),var(--bk)) top left/1px 20px no-repeat,
+  linear-gradient(var(--bk),var(--bk)) top right/20px 1px no-repeat,linear-gradient(var(--bk),var(--bk)) top right/1px 20px no-repeat,
+  linear-gradient(var(--bk),var(--bk)) bottom left/20px 1px no-repeat,linear-gradient(var(--bk),var(--bk)) bottom left/1px 20px no-repeat,
+  linear-gradient(var(--bk),var(--bk)) bottom right/20px 1px no-repeat,linear-gradient(var(--bk),var(--bk)) bottom right/1px 20px no-repeat}
+.film-line{background:var(--roast);height:1px}
+.film-line i{background:var(--crema)}
+.fp img{filter:brightness(calc(1 - var(--d,0) * .22)) saturate(calc(1 - var(--d,0) * .3))}
+/* the wall */
+.wall h2{font-size:clamp(2.8rem,6.6vw,5.8rem)}
+.pola{box-shadow:0 30px 60px -28px rgba(32,20,13,.55)}
+/* dark room */
+.step{border-radius:2px}
+.step .n{border-radius:2px;font-weight:500;font-size:13px}
+.timer,.tip{border-radius:2px}
+.recipe .side{font-weight:500;letter-spacing:.3em}
+/* rooms, map, details */
+.rm{border-top-color:var(--hairline)}
+.rm .inl{border-radius:2px}
+.wmap-scroll{border-width:1px}
+.faq summary{font-weight:400;font-size:1.5rem}
+.finale h2{font-size:clamp(3.4rem,10vw,9.5rem)}
+.finale .host strong{font-weight:300;font-size:2.8rem}
+.menu .l{font-weight:300;letter-spacing:-.02em}
+.bigmark{font-weight:300}
+.sbar .eyebrow{color:var(--crema)}
+/* keep the pinned filmstrip from widening the grid column that holds the heading */
+.film.pinned .film-stick{grid-template-columns:minmax(0,1fr)}
+.film-head{width:100%}
+.qty b,.row b,.menu .l{font-variant-numeric:lining-nums}
+.top .wrap{max-width:none;padding-inline:clamp(20px,4.4vw,72px)}
+.hcard::after{background:radial-gradient(120% 90% at 50% 38%,rgba(20,12,7,0) 20%,rgba(20,12,7,.55) 100%),linear-gradient(180deg,rgba(20,12,7,.55) 0%,rgba(20,12,7,.12) 22%,rgba(20,12,7,.42) 46%,rgba(20,12,7,.93) 100%)}
+@media (max-width:820px){
+  .rm,.rm:first-child{border-radius:3px}
+  .rm .inl{border-radius:2px}
+  .fm{border-radius:3px}
+  .hcard{min-height:calc(100svh - 70px)}
+  .htop,.hbot{padding-inline:22px}
+  .hcard h1{font-size:clamp(3.2rem,16.5vw,5.4rem)}
+  .big{font-size:clamp(1.8rem,7.6vw,2.5rem)}
+  h2{font-size:clamp(2.7rem,12.5vw,4rem)}
+  body{font-size:18px}
+}
+/* ================= v9 · Direction C: Studio =================
+   Bricolage Grotesque (light, tightly set) for display and labels, Newsreader for reading and italic accents.
+   Framed hero, flat section edges, rotating badges, and a French press that brews as you scroll. */
+:root{
+  --display:"Bricolage Grotesque",ui-sans-serif,system-ui,sans-serif;
+  --text:"Newsreader",Georgia,"Times New Roman",serif;
+  --ui:"Bricolage Grotesque",ui-sans-serif,system-ui,sans-serif;
+  --serif-i:"Newsreader",Georgia,serif;
+}
+body{font-family:var(--text);font-size:19px;font-optical-sizing:auto}
+h1,h2,h3{font-family:var(--display);font-optical-sizing:auto}
+h2{font-weight:300;letter-spacing:-.05em;line-height:.92}
+h3{font-weight:400;letter-spacing:-.035em}
+h1 em,h2 em,h3 em,.big .rw.k,.marq span.i,.finale h2 em{font-family:var(--serif-i);font-style:italic;font-weight:300;letter-spacing:-.025em}
+.big{font-family:var(--display);font-weight:300;letter-spacing:-.04em;line-height:1.08}
+.hcard h1{font-weight:300;letter-spacing:-.055em;line-height:.9}
+.eyebrow{font-weight:500;font-size:11px;letter-spacing:.16em}
+.btn,.tab,.tag,.opt span,.nav a.l{letter-spacing:.12em}
+.stat b,.marq span,.qty b,.dial output,.row b,.facts strong,.walks strong,.bt strong,.finale .host strong,.menu .l,.bigmark,.pillar h3,.rm h3{font-family:var(--display);font-weight:300;letter-spacing:-.045em}
+.step h3,.timer h3,.fmt h3,.det h3,.faq summary{font-family:var(--display);font-weight:400;letter-spacing:-.03em}
+.pola figcaption,.mapsvg .pl.hm{font-family:var(--serif-i);font-style:italic;font-weight:400}
+.mapsvg .pl{font-family:var(--display);font-weight:400;letter-spacing:-.02em}
+.hrow .lede,.signoff,.note,.rooms-hint,.wmap .cap,.row .x,.qty span{font-family:var(--serif-i)}
+/* framed hero, as in the specimen */
+.hero{padding-block:clamp(8px,1.1vw,16px) 0}
+.hero .wrap.wide{max-width:none;padding-inline:clamp(8px,1.1vw,16px)}
+.hcard{border-radius:clamp(18px,1.8vw,28px);min-height:clamp(620px,calc(100svh - 92px),1020px)}
+.hcard::before{inset:clamp(10px,1vw,16px);border-radius:clamp(10px,1.1vw,16px);border-color:rgba(241,231,214,.3)}
+.top .wrap{padding-inline:calc(clamp(8px,1.1vw,16px) + clamp(28px,4.4vw,72px))}
+/* rounded cards to sit with the framed hero; buttons stay square */
+.bt,.fm,.wmap-scroll{border-radius:18px}
+.rooms-ph{border-radius:20px}
+.rooms-ph .rcap{border-radius:2px}
+/* flat section edges: no paper tear */
+.tear{display:none}
+/* ---------- rotating badge ---------- */
+.rbadge{position:relative;width:clamp(116px,9.6vw,148px);aspect-ratio:1;flex:none;border-radius:50%;background:var(--paper);color:var(--espresso);display:grid;place-items:center;align-self:end}
+.rbadge svg.ring{position:absolute;inset:0;width:100%;height:100%;animation:spin 24s linear infinite;overflow:visible}
+.rbadge text{font-family:var(--ui);font-size:14.5px;font-weight:500;letter-spacing:.16em;fill:currentColor}
+.rbadge .rc{display:flex;align-items:flex-start;gap:2px;line-height:1}
+.rbadge .rc b{font-family:var(--display);font-weight:300;font-size:clamp(1.7rem,2.4vw,2.3rem);letter-spacing:-.05em}
+.rbadge .rc small{font-size:.8rem;color:var(--bean);margin-top:4px}
+.rbadge .rc svg{width:44px;height:auto}
+.rbadge.dk{background:var(--espresso);color:var(--crema)}
+.pols .rbadge{position:absolute;left:-2%;bottom:8%;z-index:3;width:clamp(104px,9vw,132px)}
+.hside .thumbs{align-self:end}
+@media (max-width:700px){.hside{align-items:flex-end}.hside .rbadge{width:104px}.hside .rbadge text{font-size:15.5px}}
+/* ---------- brew: the press that fills as you scroll ---------- */
+.bwrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,6vw,96px);margin-top:clamp(48px,6vw,88px);align-items:start}
+.bstage{position:sticky;top:calc(var(--hh,72px) + 20px);height:calc(100svh - var(--hh,72px) - 40px);max-height:820px;display:grid;grid-template-rows:minmax(0,1fr) auto;gap:18px;justify-items:center}
+.press{width:100%;height:100%;overflow:visible}
+.bcap{width:100%;display:grid;grid-template-columns:auto minmax(0,1fr);gap:6px 18px;align-items:baseline;border-top:1px solid rgba(241,231,214,.16);padding-top:14px}
+.bcap .bname{font-family:var(--serif-i);font-style:italic;font-size:1.15rem;color:var(--linen)}
+.bticks{grid-column:1 / -1;display:grid;grid-template-columns:repeat(6,1fr);gap:6px}
+.bticks i{height:2px;background:rgba(241,231,214,.16);transition:background .5s var(--ease)}
+.bticks i.on{background:var(--crema)}
+.bsteps{list-style:none;margin:0;padding:0}
+.bstep{min-height:64svh;display:grid;align-content:center;gap:14px;border-top:1px solid rgba(241,231,214,.14);opacity:.28;transition:opacity .6s var(--ease)}
+.bstep:last-child{border-bottom:1px solid rgba(241,231,214,.14)}
+.bstep.act{opacity:1}
+.bstep .num{font-family:var(--display);font-weight:200;font-size:clamp(4rem,8vw,7.4rem);line-height:.8;color:var(--crema);letter-spacing:-.06em}
+.bstep h3{font-size:clamp(2.2rem,3.8vw,3.4rem);font-weight:300;letter-spacing:-.045em}
+.bstep p{color:var(--sand);font-size:clamp(1.1rem,1.4vw,1.3rem);max-width:30ch}
+.press .ln2{fill:none;stroke:var(--linen);stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.press .kfill{fill:var(--espresso-2)}
+.press .pfill{fill:var(--espresso-2)}
+.press .band{fill:none;stroke:var(--crema);stroke-width:2.5;stroke-linecap:round}
+.press .kstream{fill:none;stroke:#cfe3ea;stroke-width:5;stroke-linecap:round;opacity:0}
+.press .pstream{fill:none;stroke:#6b3a1d;stroke-width:6;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1}
+.press .ksteam path,.press .csteam path{fill:none;stroke:var(--sand);stroke-width:2;stroke-linecap:round;stroke-dasharray:30;stroke-dashoffset:30;opacity:0}
+.press .grounds,.press .bloom,.press .water,.press .cupfill,.press .lid,.press .plunger,.press .kettle,.press .tilt{transform-box:view-box}
+.press .grounds,.press .water{transform-origin:160px 398px;transform:scaleY(0)}
+.press .bloom{transform-origin:160px 380px;transform:scaleY(0)}
+.press .cupfill{transform-origin:334px 420px;transform:scaleY(0)}
+.press .tilt{transform-origin:238px 416px}
+.press .kettle{transform-origin:318px -10px;opacity:0;transform:translateX(24px)}
+.press .warm,.press .grounds,.press .bloom,.press .water,.press .cupfill,.press .lid,.press .plunger,.press .kettle,.press .tilt,.press .pstream,.press .csteam{transition:transform 1s var(--ease),opacity .6s var(--ease),stroke-dashoffset .6s var(--ease)}
+/* state classes s1..s6 are cumulative */
+.press.s1:not(.s6) .kettle{opacity:1;transform:none}
+.press.s1:not(.s2) .ksteam path{animation:wisp 2.4s ease-in-out infinite}
+.press.s1:not(.s2) .ksteam path:nth-child(2){animation-delay:.8s}.press.s1:not(.s2) .ksteam path:nth-child(3){animation-delay:1.6s}
+.press.s1:not(.s5) .lid{transform:translateY(-150px);opacity:0}
+.press.s2:not(.s3) .warm{opacity:.45;transition-delay:.5s}
+.press.s3 .grounds{transform:none}
+.press.s4 .bloom{transform:none;transition-delay:.5s}
+.press.s5 .water{transform:none;transition:transform 1.5s var(--ease) .35s}
+.press.s5 .lid{transition-delay:1.5s}
+.press.s2:not(.s3) .kettle,.press.s4:not(.s5) .kettle,.press.s5:not(.s6) .kettle{animation:kpour 2s var(--ease) both}
+.press.s2:not(.s3) .kstream,.press.s4:not(.s5) .kstream,.press.s5:not(.s6) .kstream{animation:kstream 2s ease both}
+@keyframes kpour{0%{transform:none}22%,72%{transform:rotate(-30deg)}100%{transform:none}}
+@keyframes kstream{0%,20%{opacity:0}30%,64%{opacity:.9}76%,100%{opacity:0}}
+.press.s6 .plunger{transform:translateY(230px);transition:transform 1.2s var(--draw)}
+.press.s6 .tilt{transform:rotate(12deg);transition:transform 1s var(--ease) 1.3s}
+.press.s6 .pstream{stroke-dashoffset:0;transition:stroke-dashoffset .6s ease 2s}
+.press.s6 .water{transform:scaleY(.36);transition:transform 1.8s var(--ease) 2.1s}
+.press.s6 .cupfill{transform:none;transition:transform 1.8s var(--ease) 2.2s}
+.press.s6 .csteam path{animation:wisp 2.4s ease-in-out 3.6s infinite}
+.press.s6 .csteam path:nth-child(2){animation-delay:4.4s}.press.s6 .csteam path:nth-child(3){animation-delay:5.2s}
+@media (max-width:860px){
+  .bwrap{grid-template-columns:minmax(0,1fr);gap:0}
+  .bstage{top:var(--hh,64px);height:42svh;z-index:2;background:var(--espresso);margin-inline:calc(-1 * max(16px,env(safe-area-inset-left,0px)));padding:10px max(16px,env(safe-area-inset-left,0px)) 12px;gap:8px;border-bottom:1px solid rgba(241,231,214,.12)}
+  .bcap{padding-top:8px}
+  .bcap .bname{font-size:1rem}
+  .bstep{min-height:48svh;align-content:center;padding-block:28px}
+  .bstep .num{font-size:3.6rem}
+  .bstep h3{font-size:2.1rem}
+}
+@media (prefers-reduced-motion:reduce){
+  .rbadge svg.ring{animation:none}
+  .press *{transition:none!important;animation:none!important}
+  .press.s2:not(.s3) .kstream{opacity:0}
+}
+@media (max-width:860px){.top .wrap{padding-inline:max(18px,env(safe-area-inset-left,0px))}.rm,.rm:first-child{border-radius:18px}.rm .inl{border-radius:12px}.fm{border-radius:18px}}
 </style>
 
 <!-- shared logo geometry, traced from the supplied logo file -->
@@ -652,7 +889,7 @@ a,button,summary,label{touch-action:manipulation;-webkit-tap-highlight-color:tra
             </div>
             <div class="hside rise" style="animation-delay:1.25s">
               <div class="thumbs"><img src="img/bed1.jpg" srcset="img/s/bed1.jpg 720w" sizes="110px" decoding="async" alt="" loading="lazy"><img src="img/kitchen.jpg" srcset="img/s/kitchen.jpg 720w" sizes="110px" decoding="async" alt="" loading="lazy"></div>
-              <div class="stat"><b>4.98<small>★</small></b><span>Host rating<br>Superhost</span></div>
+              <div class="rbadge" role="img" aria-label="Host rating 4.98, Superhost"><svg class="ring" viewBox="0 0 200 200" aria-hidden="true"><defs><path id="rbp1" d="M100 100 m-76 0 a76 76 0 1 1 152 0 a76 76 0 1 1 -152 0"/></defs><text><textPath href="#rbp1" textLength="472" lengthAdjust="spacing">SUPERHOST · 4.98 ★ · SAKET NAGAR · INDORE · </textPath></text></svg><span class="rc" aria-hidden="true"><b>4.98</b><small>★</small></span></div>
             </div>
           </div>
         </div>
@@ -759,6 +996,7 @@ a,button,summary,label{touch-action:manipulation;-webkit-tap-highlight-color:tra
         <a class="btn" href="https://instagram.com/clicksandbrewws" target="_blank" rel="noopener">@clicksandbrewws <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 11 11 3M5 3h6v6"/></svg></a>
       </div>
       <div class="pols">
+        <div class="rbadge dk" aria-hidden="true"><svg class="ring" viewBox="0 0 200 200"><defs><path id="rbp2" d="M100 100 m-76 0 a76 76 0 1 1 152 0 a76 76 0 1 1 -152 0"/></defs><text><textPath href="#rbp2" textLength="472" lengthAdjust="spacing">PHOTOGRAPHS BY SHIVAM · ON THE WALLS · </textPath></text></svg><span class="rc"><svg viewBox="150 185 80 80"><use href="#bean"/></svg></span></div>
         <figure class="pola p1" data-par="-.06"><img src="img/mirror.jpg" srcset="img/s/mirror.jpg 720w, img/mirror.jpg 1200w" sizes="(max-width:820px) 88vw, 560px" decoding="async" alt="A wavy mirror on a bedroom wall" loading="lazy"><figcaption>Bedroom</figcaption></figure>
         <figure class="pola p2" data-par=".05"><img src="img/lamp.jpg" srcset="img/s/lamp.jpg 720w, img/lamp.jpg 1200w" sizes="(max-width:820px) 88vw, 560px" decoding="async" alt="An amber pendant lamp glowing beside the bed" loading="lazy"><figcaption>Amber</figcaption></figure>
         <figure class="pola p3" data-par="-.1"><img src="img/bed2.jpg" srcset="img/s/bed2.jpg 720w, img/bed2.jpg 1200w" sizes="(max-width:820px) 88vw, 560px" decoding="async" alt="A king bed with grey linen under two wall lights" loading="lazy"><figcaption>Grey hour</figcaption></figure>
@@ -769,7 +1007,6 @@ a,button,summary,label{touch-action:manipulation;-webkit-tap-highlight-color:tra
   <!-- ======== THE BREW ======== -->
 
   <section id="brew" class="dark" aria-labelledby="brew-h">
-    <svg class="tear t" viewBox="0 0 1440 40" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40 L0 16.4 L0 16.4 L12 24.9 L22 21.9 L37 9.5 L55 9.0 L71 9.8 L82 19.0 L105 11.2 L117 24.3 L143 23.0 L158 33.4 L168 30.3 L182 11.8 L193 16.0 L216 12.7 L235 24.6 L250 22.2 L260 9.5 L273 25.7 L289 16.2 L308 19.8 L322 28.7 L343 14.3 L362 21.7 L385 27.0 L399 33.5 L410 18.9 L432 12.0 L450 9.0 L470 27.9 L489 30.8 L503 26.1 L522 23.1 L539 29.8 L564 20.3 L584 9.6 L605 24.8 L631 29.4 L645 18.0 L665 8.6 L682 12.4 L693 9.5 L715 11.4 L728 18.2 L752 10.1 L769 22.3 L793 29.3 L816 15.2 L833 17.3 L857 32.9 L868 12.6 L881 14.1 L898 23.3 L912 8.1 L928 17.6 L947 32.8 L967 21.4 L987 25.6 L997 31.4 L1019 30.7 L1042 18.2 L1057 10.7 L1077 9.6 L1087 13.4 L1099 16.8 L1109 8.0 L1120 10.6 L1136 8.7 L1160 24.0 L1171 14.6 L1186 17.5 L1197 30.1 L1223 20.1 L1240 10.2 L1251 16.9 L1264 29.6 L1276 8.6 L1301 21.7 L1313 22.1 L1322 21.7 L1348 30.4 L1369 14.8 L1384 12.3 L1406 21.8 L1428 16.6 L1440 20.0 L1440 40 Z"/></svg>
     <div class="wrap">
       <div class="sechead">
         <div><div class="eyebrow">The coffee corner</div>
@@ -792,20 +1029,79 @@ a,button,summary,label{touch-action:manipulation;-webkit-tap-highlight-color:tra
           <div><b>4 minutes</b><span>of waiting</span></div></div>
       </div>
 
-      <ol class="steps">
-        <li class="step"><svg class="ic" viewBox="0 0 56 56" aria-hidden="true"><g class="a-steam"><path d="M14 18 c-3 -3 3 -5 0 -8"/><path d="M19 15 c-3 -3 3 -5 0 -8"/></g><path class="s f4" d="M12 44h28l-3-20H15z"/><path class="s" d="M37 28l8-6M19 24c0-5 14-5 14 0"/><circle class="s" cx="44" cy="40" r="6"/><path class="s a-hand" d="M44 40v-4" style="transform-origin:44px 40px;transform-box:view-box"/></svg>
-          <div class="head"><span class="n">1</span><h3>Boil, then wait</h3></div><p>Boil the kettle. Let it rest 1 minute.</p></li>
-        <li class="step"><svg class="ic" viewBox="0 0 56 56" aria-hidden="true"><path class="s" d="M14 14a8 8 0 0 1 10-5" /><path class="s" d="M24 9l-1 4M24 9l-4 0"/><rect class="s f4" x="16" y="18" width="20" height="28" rx="2"/><rect class="f3 a-glow" x="17.5" y="36" width="17" height="8.5"/><path class="s" d="M36 24h4v14h-4M26 12v6M21 12h10"/></svg>
-          <div class="head"><span class="n">2</span><h3>Warm the press</h3></div><p>Swirl a little hot water inside, then pour it away.</p></li>
-        <li class="step"><svg class="ic" viewBox="0 0 56 56" aria-hidden="true"><rect class="s f4" x="14" y="22" width="20" height="24" rx="2"/><rect class="f2" x="15.5" y="38" width="17" height="6.5"/><path class="s" d="M34 28h4v12h-4"/><g class="a-tilt"><path class="s" d="M30 18 L46 6"/><ellipse class="f1" cx="27" cy="20" rx="5" ry="3" transform="rotate(-35 27 20)"/></g></svg>
-          <div class="head"><span class="n">3</span><h3>Add the coffee</h3></div><p>2 heaped tablespoons for every mug.</p></li>
-        <li class="step"><svg class="ic" viewBox="0 0 56 56" aria-hidden="true"><rect class="s f4" x="16" y="22" width="20" height="24" rx="2"/><rect class="f2" x="17.5" y="38" width="17" height="6.5"/><path class="s" d="M36 28h4v12h-4"/><path class="s f4" d="M4 8h14l-2 10H6z"/><path class="s" d="M18 10l6 4"/><path class="s" d="M4 10c-3 0-3 6 1 6"/><path class="f3 a-drip" d="M27 18a2 2 0 1 1-4 0c0-2 2-4 2-4s2 2 2 4z"/><text x="44" y="16" text-anchor="middle" font-family="EB Garamond, serif" font-weight="600" font-size="8" class="f5">30s</text></svg>
-          <div class="head"><span class="n">4</span><h3>Wet &amp; wait</h3></div><p>Pour a little water to just wet the coffee. Wait 30 seconds.</p></li>
-        <li class="step"><svg class="ic" viewBox="0 0 56 56" aria-hidden="true"><rect class="s f4" x="12" y="18" width="20" height="28" rx="2"/><rect class="f2" x="13.5" y="24" width="17" height="20.5"/><path class="s" d="M32 24h4v14h-4M22 8v10M17 8h10"/><circle class="s f4" cx="44" cy="38" r="8"/><path class="s a-hand" d="M44 38v-5" style="transform-origin:44px 38px;transform-box:view-box"/></svg>
-          <div class="head"><span class="n">5</span><h3>Fill, lid on, wait</h3></div><p>Fill up, stir once. Lid on, plunger up. Set a 4 minute timer.</p></li>
-        <li class="step"><svg class="ic" viewBox="0 0 56 56" aria-hidden="true"><rect class="s f4" x="10" y="20" width="20" height="26" rx="2"/><rect class="f2" x="11.5" y="34" width="17" height="10.5"/><path class="s" d="M30 26h4v12h-4"/><g class="a-plunge"><path class="s" d="M20 6v24M15 6h10M12 30h16"/></g><path class="s f4" d="M38 36h12v6a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4z"/><path class="f2" d="M39 38h10v4a3 3 0 0 1-3 3h-4a3 3 0 0 1-3-3z"/></svg>
-          <div class="head"><span class="n">6</span><h3>Press &amp; pour</h3></div><p>Push the plunger down slowly. Pour it all out right away.</p></li>
-      </ol>
+      <div class="bwrap">
+        <div class="bstage">
+          <svg class="press" id="press" viewBox="0 -170 400 610" role="img" aria-label="An illustrated French press that fills step by step as you scroll through the guide.">
+            <defs>
+              <clipPath id="pglass"><rect x="92" y="96" width="136" height="302" rx="6"/></clipPath>
+              <clipPath id="pcup"><path d="M298 364 H370 L364 412 Q362 420 354 420 H314 Q306 420 304 412 Z"/></clipPath>
+              <linearGradient id="gBrew" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7a4421"/><stop offset=".55" stop-color="#4a2712"/><stop offset="1" stop-color="#2a160b"/></linearGradient>
+              <linearGradient id="gBloom" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d6a46c"/><stop offset="1" stop-color="#8a5a36"/></linearGradient>
+              <linearGradient id="gGl" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#f1e7d6" stop-opacity=".16"/><stop offset=".2" stop-color="#f1e7d6" stop-opacity="0"/><stop offset=".8" stop-color="#f1e7d6" stop-opacity="0"/><stop offset="1" stop-color="#f1e7d6" stop-opacity=".1"/></linearGradient>
+            </defs>
+            <ellipse cx="226" cy="430" rx="168" ry="7" fill="rgba(0,0,0,.35)"/>
+            <!-- kettle -->
+            <g class="kettle">
+              <g class="ksteam"><path d="M310 -92 c-5 -6 5 -10 0 -15 s5 -10 0 -15"/><path d="M322 -96 c-5 -6 5 -10 0 -15 s5 -10 0 -15"/><path d="M334 -92 c-5 -6 5 -10 0 -15 s5 -10 0 -15"/></g>
+              <path class="kfill" d="M282 -10 Q278 -68 318 -72 Q358 -68 354 -10 Z"/>
+              <path class="ln2" d="M282 -10 Q278 -68 318 -72 Q358 -68 354 -10 Z M276 -10 H360"/>
+              <path class="ln2" d="M286 -28 L254 -54 M292 -42 L262 -60"/>
+              <path class="ln2" d="M352 -54 C380 -54 380 -18 354 -18"/>
+              <path class="ln2" d="M308 -76 Q318 -84 328 -76"/>
+            </g>
+            <path class="kstream" pathLength="1" d="M240 -17 Q188 12 178 112 L178 392"/>
+            <!-- the press -->
+            <g class="tilt">
+              <g clip-path="url(#pglass)">
+                <rect x="92" y="124" width="136" height="274" fill="rgba(241,231,214,.035)"/>
+                <rect class="warm" x="92" y="350" width="136" height="48" fill="#9cc1cf" opacity="0"/>
+                <g class="grounds"><path d="M92 398 V378 Q104 372 116 378 T140 378 T164 378 T188 378 T212 378 T236 378 V398 Z" fill="#3b2315"/>
+                  <g fill="#6a4429"><circle cx="104" cy="388" r="1.6"/><circle cx="130" cy="384" r="1.4"/><circle cx="152" cy="391" r="1.6"/><circle cx="176" cy="385" r="1.3"/><circle cx="198" cy="390" r="1.6"/><circle cx="218" cy="384" r="1.4"/></g></g>
+                <g class="bloom"><path d="M92 380 V354 Q102 346 112 354 T132 354 T152 354 T172 354 T192 354 T212 354 T232 354 V380 Z" fill="url(#gBloom)"/>
+                  <g fill="#ecd2a8"><circle cx="110" cy="360" r="2.2"/><circle cx="138" cy="358" r="1.6"/><circle cx="160" cy="363" r="2.4"/><circle cx="186" cy="359" r="1.8"/><circle cx="210" cy="362" r="2"/></g></g>
+                <g class="water"><rect x="92" y="140" width="136" height="260" fill="url(#gBrew)" opacity=".94"/><rect x="92" y="140" width="136" height="8" fill="#c08a52"/></g>
+                <rect x="92" y="124" width="136" height="274" fill="url(#gGl)"/>
+              </g>
+              <path class="ln2" d="M90 124 V392 Q90 400 98 400 H222 Q230 400 230 392 V124"/>
+              <path class="ln2" d="M230 124 L246 114 M230 132 L246 114"/>
+              <path class="band" d="M86 152 H234 M86 372 H234"/>
+              <path class="ln2" d="M90 156 H64 A18 18 0 0 0 46 174 V322 A18 18 0 0 0 64 340 H90"/>
+              <path class="pfill ln2" d="M82 400 H238 L232 416 H88 Z"/>
+              <g class="lid">
+                <g class="plunger">
+                  <path class="ln2" d="M160 -134 V126"/>
+                  <ellipse class="kfill ln2" cx="160" cy="-142" rx="15" ry="9"/>
+                  <rect x="94" y="120" width="132" height="8" rx="2" fill="#f1e7d6" opacity=".85"/>
+                  <path d="M100 124 H220" stroke="#2e1f16" stroke-width="1" stroke-dasharray="3 3"/>
+                </g>
+                <rect class="kfill ln2" x="84" y="100" width="152" height="16" rx="5"/>
+              </g>
+            </g>
+            <path class="pstream" pathLength="1" d="M309 122 Q326 210 334 372"/>
+            <!-- cup -->
+            <g class="cup">
+              <g clip-path="url(#pcup)"><rect class="cupfill" x="296" y="362" width="80" height="60" fill="url(#gBrew)"/></g>
+              <path class="ln2" d="M298 364 H370 L364 412 Q362 420 354 420 H314 Q306 420 304 412 Z"/>
+              <path class="ln2" d="M368 376 q20 0 18 18 q-2 16 -22 14"/>
+              <path class="ln2" d="M286 424 H384"/>
+              <g class="csteam"><path d="M322 350 c-4 -5 4 -8 0 -12 s4 -8 0 -12"/><path d="M336 346 c-4 -5 4 -8 0 -12 s4 -8 0 -12"/><path d="M350 350 c-4 -5 4 -8 0 -12 s4 -8 0 -12"/></g>
+            </g>
+          </svg>
+          <div class="bcap" aria-hidden="true">
+            <span class="eyebrow" id="bnum">Step 00 / 06</span>
+            <span class="bname" id="bname">Scroll to brew</span>
+            <div class="bticks"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          </div>
+        </div>
+        <ol class="bsteps">
+          <li class="bstep" data-s="1"><span class="num">01</span><h3>Boil, then wait</h3><p>Boil the kettle. Let it rest 1 minute.</p></li>
+          <li class="bstep" data-s="2"><span class="num">02</span><h3>Warm the press</h3><p>Swirl a little hot water inside, then pour it away.</p></li>
+          <li class="bstep" data-s="3"><span class="num">03</span><h3>Add the coffee</h3><p>2 heaped tablespoons for every mug.</p></li>
+          <li class="bstep" data-s="4"><span class="num">04</span><h3>Wet &amp; wait</h3><p>Pour a little water to just wet the coffee. Wait 30 seconds.</p></li>
+          <li class="bstep" data-s="5"><span class="num">05</span><h3>Fill, lid on, wait</h3><p>Fill up, stir once. Lid on, plunger up. Set a 4 minute timer.</p></li>
+          <li class="bstep" data-s="6"><span class="num">06</span><h3>Press &amp; pour</h3><p>Push the plunger down slowly. Pour it all out right away.</p></li>
+        </ol>
+      </div>
 
       <div class="timer" aria-labelledby="timer-h">
         <div class="dial"><svg viewBox="0 0 120 120" aria-hidden="true"><circle class="track" cx="60" cy="60" r="54"/><circle class="prog" id="prog" cx="60" cy="60" r="54" stroke-dasharray="339.3" stroke-dashoffset="0"/></svg><output id="clock">4:00</output></div>
@@ -1367,5 +1663,24 @@ a,button,summary,label{touch-action:manipulation;-webkit-tap-highlight-color:tra
   document.getElementById('vnext').onclick=function(){show(cur2+1)};
   v.addEventListener('click',function(e){ if(e.target===v||e.target.classList.contains('stage')) close(); });
   document.addEventListener('keydown',function(e){ if(v.hidden) return; if(e.key==='Escape') close(); if(e.key==='ArrowLeft') show(cur2-1); if(e.key==='ArrowRight') show(cur2+1); });
+})();
+</script>
+<script>
+(function(){
+  var pr=document.getElementById('press'); if(!pr) return;
+  var steps=[].slice.call(document.querySelectorAll('.bstep')), num=document.getElementById('bnum'), nm=document.getElementById('bname'), ticks=[].slice.call(document.querySelectorAll('.bticks i'));
+  var names=['Scroll to brew','Boil, then wait','Warm the press','Add the coffee','Wet & wait','Fill, lid on, wait','Press & pour'], cur=-1;
+  function setS(n){ if(n===cur) return; cur=n;
+    for(var i=1;i<=6;i++) pr.classList.toggle('s'+i,i<=n);
+    steps.forEach(function(el,i){el.classList.toggle('act',i===n-1)});
+    ticks.forEach(function(t,i){t.classList.toggle('on',i<n)});
+    num.textContent='Step 0'+n+' / 06'; nm.textContent=names[n]; }
+  setS(0);
+  if(!('IntersectionObserver' in window)){ setS(6); return; }
+  var mob=window.matchMedia('(max-width:860px)').matches;
+  var io=new IntersectionObserver(function(es){ es.forEach(function(e){ var k=+e.target.dataset.s;
+      if(e.isIntersecting) setS(k); else if(k===1 && e.boundingClientRect.top>0) setS(0); }); },
+    {rootMargin: mob ? '-66% 0px -33% 0px' : '-50% 0px -49% 0px'});
+  steps.forEach(function(el){io.observe(el)});
 })();
 </script>
