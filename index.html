@@ -979,6 +979,69 @@ html{background:var(--paper)}
   html.past-hero body::before{opacity:1}
   .hbot{padding-bottom:calc(22px + env(safe-area-inset-bottom,0px))}
 }
+
+/* ===== v2: minimal, shorter ===== */
+section{padding-block:clamp(64px,8vw,120px)}
+@media (max-width:820px){section{padding-block:56px}}
+.sechead{margin-bottom:clamp(32px,4vw,56px)}
+h2{font-size:clamp(2.5rem,5.6vw,5rem)}
+.btn .bi{width:16px;height:16px;flex:none}
+.btn:hover .bi{transform:none}
+.hcontact{margin-top:16px;font-size:15px;color:var(--linen);opacity:.85;font-family:var(--ui);letter-spacing:.04em}
+.hcontact a{color:var(--crema);text-decoration:none;border-bottom:1px solid rgba(219,168,104,.5)}
+.menu-foot p a,.finale .contact a{text-decoration:none}
+/* USP strip */
+.usp{padding-block:clamp(48px,6vw,88px);border-bottom:1px solid var(--hairline)}
+.usp-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px 32px;flex-wrap:wrap;margin-bottom:28px}
+.usp-head p{margin:0;color:var(--roast);font-style:italic;font-size:clamp(1.1rem,1.6vw,1.35rem)}
+.usps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));border-top:1px solid var(--espresso)}
+.usps li{padding:24px 20px 8px 0;display:grid;gap:8px;align-content:start}
+.usps li+li{border-left:1px solid var(--hairline);padding-left:20px}
+.usps .ic{width:44px;height:44px;margin-bottom:6px}
+.usps b{font-family:var(--display);font-weight:400;font-size:clamp(1.3rem,1.8vw,1.6rem);line-height:1.1}
+.usps span{color:var(--roast);font-size:15.5px;line-height:1.45}
+@media (max-width:1000px){.usps{grid-template-columns:repeat(2,minmax(0,1fr))}.usps li,.usps li+li{padding:20px 16px 20px 0;border-left:0;border-bottom:1px solid var(--hairline)}.usps li:nth-child(even){padding-left:16px;border-left:1px solid var(--hairline)}.usps li:last-child{grid-column:1 / -1;border-left:0;padding-left:0}}
+/* location: map leads */
+.sechead.tight{margin-bottom:28px}
+.wmap.first{margin-top:0}
+#around .around{margin-top:clamp(40px,5vw,72px)}
+/* host */
+.wall .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.wall .cta .btn{margin-top:0}
+.wall p+p{margin-top:14px}
+.ig-head{display:flex;justify-content:space-between;align-items:center;margin-top:clamp(48px,6vw,80px);padding-bottom:16px;border-bottom:1px solid var(--hairline)}
+.ig-hint{display:inline-flex;align-items:center;gap:8px}.ig-hint svg{width:22px;height:10px}
+.igstrip{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;padding:24px max(16px,calc((100vw - 1240px) / 2 + 40px)) 8px;scrollbar-width:thin;-webkit-overflow-scrolling:touch}
+.igp{flex:none;width:min(80vw,326px);margin:0;scroll-snap-align:start}
+.igf{height:418px;overflow:hidden;border:1px solid var(--card-border);background:var(--card)}
+.igf iframe{width:100%;height:560px;border:0;display:block}
+.igp figcaption{margin-top:10px;font-style:italic;color:var(--roast);font-size:15px}
+/* photos: plain horizontal scroll */
+.film{padding-block:0 clamp(48px,6vw,88px)}
+.film-track{padding-left:max(16px,calc((100vw - 1240px) / 2 + 40px));padding-right:max(16px,calc((100vw - 1240px) / 2 + 40px));scroll-padding-left:max(16px,calc((100vw - 1240px) / 2 + 40px));cursor:grab}
+.film-head{padding-top:clamp(56px,7vw,96px)}
+/* sticky bar icon buttons */
+.sbar .btn.ico{padding:10px 12px;min-width:44px;justify-content:center}
+.sbar .btn.ico .bi{width:18px;height:18px}
+@media (max-width:560px){.sbar .btn.ico{flex:0 0 auto}}
+.igstrip{scroll-padding-left:max(16px,calc((100vw - 1240px) / 2 + 40px))}
+.bstep{min-height:36svh}.bstep .num{font-size:clamp(3rem,5vw,4.6rem)}
+@media (max-width:860px){.bstep{min-height:30svh;padding-block:20px}}
+@media (min-width:861px){.wmap.first .mapsvg{display:block;width:100%;height:clamp(380px,42vw,540px)}}
+.hcontact a{white-space:nowrap}
+@media (max-width:700px){
+  .hrow .cta{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .hrow .cta .btn{justify-content:center;padding-inline:12px}
+  .hrow .cta .btn.fill{grid-column:1 / -1}
+  .usps{grid-template-columns:minmax(0,1fr)}
+  .usps li,.usps li+li,.usps li:nth-child(even),.usps li:last-child{grid-template-columns:36px minmax(0,1fr);column-gap:14px;row-gap:2px;padding:16px 0;border-left:0;border-bottom:1px solid var(--hairline);grid-column:auto}
+  .usps .ic{width:32px;height:32px;grid-row:span 2;margin:2px 0 0}
+  .usps b{font-size:1.2rem}
+  .usps span{font-size:14.5px}
+  .usp-head{margin-bottom:18px}
+}
+@media (max-width:760px){.wmap .walks{display:none}.bstep{min-height:0;padding-block:28px}.details .det{padding-block:18px}}
+@media (max-width:860px){.wall .pols{display:none}.ig-head{margin-top:40px}}
 </style>
 </head>
 <body>
@@ -1010,9 +1073,9 @@ html{background:var(--paper)}
     </a>
     <span class="sect" aria-hidden="true"><b id="secn">01</b><span id="secl">The stay</span></span>
     <nav class="nav" aria-label="Main">
-      <a class="l" href="#stay">The stay</a>
-      <a class="l" href="#gallery">Gallery</a>
-      <a class="l" href="#brew">The brew</a>
+      <a class="l" href="#around">Location</a>
+      <a class="l" href="#host">The host</a>
+      <a class="l" href="#gallery">Photos</a>
       <a class="l" href="#enquire">Enquire</a>
       <a class="btn fill" href="https://www.airbnb.co.uk/rooms/1792507632192727625" target="_blank" rel="noopener">Book a stay</a>
       <button class="mbtn" id="mbtn" type="button" aria-expanded="false" aria-controls="menu" aria-label="Open menu"><span></span><span></span></button>
@@ -1023,17 +1086,16 @@ html{background:var(--paper)}
 
 <nav class="menu" id="menu" data-lenis-prevent aria-label="Menu" hidden>
   <div class="menu-in">
-    <a class="l" href="#stay">The stay</a>
-    <a class="l" href="#gallery">Gallery</a>
-    <a class="l" href="#around">Around you</a>
+    <a class="l" href="#stay">The promise</a>
+    <a class="l" href="#around">Location</a>
+    <a class="l" href="#host">The host</a>
+    <a class="l" href="#gallery">Photos</a>
     <a class="l" href="#brew">The brew</a>
-    <a class="l" href="#rooms">Rooms</a>
-    <a class="l" href="#studio">Studio</a>
     <a class="l" href="#enquire">Enquire</a>
   </div>
   <div class="menu-foot">
     <a class="btn fill" href="https://www.airbnb.co.uk/rooms/1792507632192727625" target="_blank" rel="noopener">Check dates on Airbnb</a>
-    <p>Call <b>7000053900</b> · WhatsApp <b>9479419712</b></p>
+    <p><a href="tel:+917000053900">Call <b>7000053900</b></a> · <a href="https://wa.me/919479419712" target="_blank" rel="noopener">WhatsApp <b>9479419712</b></a></p>
   </div>
 </nav>
 
@@ -1051,11 +1113,13 @@ html{background:var(--paper)}
           <h1><span class="w"><span style="animation-delay:.25s">A slow</span></span> <span class="w"><span style="animation-delay:.35s">morning,</span></span><br> <span class="w"><span style="animation-delay:.45s"><em>in the heart</em></span></span> <span class="w"><span style="animation-delay:.55s"><em>of Indore.</em></span></span></h1>
           <div class="hrow">
             <div>
-              <p class="lede rise" style="animation-delay:.9s">A two-bedroom stay hung with the host's photographs, with a coffee corner and a living room made for creating. The best cafes in the city are a short walk away.</p>
+              <p class="lede rise" style="animation-delay:.9s">A two-bedroom stay that doubles as a small gallery of the host's photographs. Spotless, fully air-conditioned, and a short walk from Indore's best cafes.</p>
               <div class="cta rise" style="animation-delay:1.05s">
                 <a class="btn fill" href="https://www.airbnb.co.uk/rooms/1792507632192727625" target="_blank" rel="noopener">Check dates on Airbnb <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 11 11 3M5 3h6v6"/></svg></a>
-                <a class="btn" href="#gallery">See the photographs</a>
+                <a class="btn" href="tel:+917000053900"><svg class="bi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>Call host</a>
+                <a class="btn" href="https://wa.me/919479419712" target="_blank" rel="noopener"><svg class="bi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3.5 20.5l1.3-4.2A8.5 8.5 0 1 1 8 19.4z"/><path d="M9 8.5c0 3.5 3 6.5 6.5 6.5l1-1.5-2-1-1 1a4 4 0 0 1-2-2l1-1-1-2z"/></svg>WhatsApp</a>
               </div>
+              <p class="hcontact rise" style="animation-delay:1.15s">Direct line <a href="tel:+917000053900">70000 53900</a> · WhatsApp <a href="https://wa.me/919479419712" target="_blank" rel="noopener">94794 19712</a></p>
             </div>
             <div class="hside rise" style="animation-delay:1.25s">
               <div class="thumbs"><img src="img/bed1.jpg" decoding="async" alt="" loading="lazy"><img src="img/kitchen.jpg" decoding="async" alt="" loading="lazy"></div>
@@ -1067,124 +1131,41 @@ html{background:var(--paper)}
     </div>
     </div>
 
-  <!-- ======== STAY · LOOK · BREW ======== -->
-  <section id="stay" data-sec="The stay" aria-labelledby="stay-h">
+  <!-- ======== FIVE PROMISES ======== -->
+  <section id="stay" data-sec="The promise" class="usp" aria-labelledby="stay-h">
     <div class="wrap">
-      <div class="eyebrow" id="stay-h" style="margin-bottom:28px">One home, three ways to use it</div>
-      <div class="intro">
-        <p class="big" id="big">A cosy 2BHK in Saket Nagar, with Indore's best cafes <em>right next door.</em></p>
-        <p class="intro-sub">One of the city's most central, sought-after neighbourhoods. Brew your own at the coffee station, unwind amid the host's candid photography, or shoot, record and create.</p>
-      </div>
-      <div class="pillars">
-
-        <div class="pillar">
-          <div class="num"><span class="eyebrow">Stay</span>
-            <svg class="ic" viewBox="0 0 56 56" aria-hidden="true">
-              <path class="s a-draw" style="--l:118" d="M6 46 L24 22 L40 46"/>
-              <path class="s a-draw" style="--l:110" d="M16 46 L32 22 L50 46 L40 46"/>
-              <ellipse class="f1 a-pop" cx="30" cy="41" rx="3" ry="4.4" transform="rotate(30 30 41)"/>
-            </svg></div>
-          <h3>A home</h3>
-          <p>Two bedrooms with king beds and their own ACs, two bathrooms, an open kitchen and a living room over a leafy public park.</p>
-        </div>
-        <div class="pillar">
-          <div class="num"><span class="eyebrow">Look</span>
-            <svg class="ic" viewBox="0 0 56 56" aria-hidden="true">
-              <rect class="s f4" x="6" y="16" width="44" height="30" rx="4"/>
-              <path class="s" d="M19 16l3-6h12l3 6"/>
-              <circle class="s" cx="28" cy="31" r="10"/>
-              <g class="a-iris" style="transform-origin:28px 31px;transform-box:view-box"><path class="s" d="M28 21 L32 31 M37.5 28 L28 31 M33 39 L27 31 M21 37 L28 31 M20 25 L29 30"/></g>
-              <circle class="f5 a-flash" cx="43" cy="22" r="2"/>
-            </svg></div>
-          <h3>A gallery</h3>
-          <p>The host's own photographs hang in the living room and both bedrooms. Stay a few nights inside a small, lived-in exhibition.</p>
-        </div>
-        <div class="pillar">
-          <div class="num"><span class="eyebrow">Brew</span>
-            <svg class="ic" viewBox="0 0 56 56" aria-hidden="true">
-              <g class="a-steam"><path d="M22 18 c-3 -3 3 -5 0 -8"/><path d="M28 16 c-3 -3 3 -5 0 -8"/><path d="M34 18 c-3 -3 3 -5 0 -8"/></g>
-              <path class="s f4" d="M12 24h28v12a10 10 0 0 1-10 10h-8a10 10 0 0 1-10-10z"/>
-              <path class="f2" d="M13.5 29h25v7a8.5 8.5 0 0 1-8.5 8.5h-8a8.5 8.5 0 0 1-8.5-8.5z" opacity=".9"/>
-              <path class="s" d="M40 28h3a5 5 0 0 1 0 10h-4"/>
-              <path class="s" d="M10 50h32"/>
-            </svg></div>
-          <h3>A coffee ritual</h3>
-          <p>A coffee corner with a French press and a picture guide, so even first-timers make a good mug. Take it to the balcony.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ======== GALLERY ======== -->
-  <section id="gallery" data-sec="Gallery" class="film" aria-labelledby="gal-h">
-    <div class="film-pin" id="fpin">
-      <div class="film-stick" id="fstick">
-        <div class="wrap film-head">
-          <div><div class="eyebrow">Room by room</div>
-            <h2 id="gal-h" style="margin-top:16px">Hung like <em>prints.</em></h2></div>
-          <p>Nine plates from the apartment. Keep scrolling to move along the strip, and select one to see it full size.</p>
-        </div>
-        <div class="film-track" id="ftrack">
-          <figure class="plate fp land" tabindex="0"><div class="bracket"><div class="frame"><img src="img/living.jpg" decoding="async" alt="Living room with mustard sofa and orange armchair" loading="lazy"></div></div>
-            <figcaption><b>The living room</b><span class="eyebrow">Plate 01</span></figcaption><span class="d">Corduroy sofa, origami pendant, a 50-inch 4K TV and park light through sheer linen.</span></figure>
-          <figure class="plate fp" tabindex="0"><div class="bracket"><div class="frame"><img src="img/bar.jpg" decoding="async" alt="Walnut breakfast bar with two black stools" loading="lazy"></div></div>
-            <figcaption><b>The bar</b><span class="eyebrow">Plate 02</span></figcaption><span class="d">Walnut counter, two stools, water on a wooden tray.</span></figure>
-          <figure class="plate fp land" tabindex="0"><div class="bracket"><div class="frame"><img src="img/kitchen.jpg" decoding="async" alt="Galley kitchen with dark granite counter, looking through to the living room" loading="lazy"></div></div>
-            <figcaption><b>The kitchen</b><span class="eyebrow">Plate 03</span></figcaption><span class="d">Induction cooktop, chimney, mini fridge and RO+UV drinking water.</span></figure>
-          <figure class="plate fp" tabindex="0"><div class="bracket"><div class="frame"><img src="img/desk.jpg" decoding="async" alt="A wooden desk at an open window, trees outside and leaf shadows on the wall" loading="lazy"></div></div>
-            <figcaption><b>The desk</b><span class="eyebrow">Plate 04</span></figcaption><span class="d">Morning sun, leaf shadows and an open window onto the trees.</span></figure>
-          <figure class="plate fp" tabindex="0"><div class="bracket"><div class="frame"><img src="img/lamp.jpg" decoding="async" alt="A glowing amber pleated pendant lamp beside a striped bed" loading="lazy"></div></div>
-            <figcaption><b>Amber</b><span class="eyebrow">Plate 05</span></figcaption><span class="d">The pleated pendant, after dark.</span></figure>
-          <figure class="plate fp" tabindex="0"><div class="bracket"><div class="frame"><img src="img/bed1.jpg" decoding="async" alt="A king bed with striped linen, an amber pendant and a shelf of frames" loading="lazy"></div></div>
-            <figcaption><b>Bedroom one</b><span class="eyebrow">Plate 06</span></figcaption><span class="d">King bed, striped linen, a shelf of frames.</span></figure>
-          <figure class="plate fp land" tabindex="0"><div class="bracket"><div class="frame"><img src="img/bed1-wide.jpg" decoding="async" alt="Bedroom with a wavy mirror, coat rack and a desk by the window" loading="lazy"></div></div>
-            <figcaption><b>Bedroom two</b><span class="eyebrow">Plate 07</span></figcaption><span class="d">Wavy mirror, coat rack, a desk by the trees.</span></figure>
-          <figure class="plate fp" tabindex="0"><div class="bracket"><div class="frame"><img src="img/bed2.jpg" decoding="async" alt="A king bed with grey linen and striped cushions under two wall lights" loading="lazy"></div></div>
-            <figcaption><b>Grey hour</b><span class="eyebrow">Plate 08</span></figcaption><span class="d">King bed, two reading lights, roman blinds.</span></figure>
-          <figure class="plate fp" tabindex="0"><div class="bracket"><div class="frame"><img src="img/bath2.jpg" decoding="async" alt="Bathroom with a wall-hung toilet and marble-effect tiles" loading="lazy"></div></div>
-            <figcaption><b>The washroom</b><span class="eyebrow">Plate 09</span></figcaption><span class="d">One of two, both stocked with toiletries.</span></figure>
-        </div>
-        <div class="wrap film-bar">
-          <span class="eyebrow" id="fcount">01 / 09</span>
-          <div class="film-line"><i id="fline"></i></div>
-          <span class="eyebrow film-hint">Scroll <svg viewBox="0 0 22 10" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M0 5h20M16 1l4 4-4 4"/></svg></span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ======== ON THE WALLS ======== -->
-  <section class="wall" data-sec="On the walls" aria-labelledby="wall-h">
-    <div class="wrap wallgrid">
-      <div class="wt">
-        <svg class="ic" viewBox="0 0 56 56" aria-hidden="true">
-          <rect class="s f4" x="8" y="10" width="40" height="36" rx="1"/>
-          <rect class="s" x="14" y="16" width="28" height="24"/>
-          <path class="s a-draw" style="--l:60" d="M14 36 L23 27 L29 33 L33 29 L42 38"/>
-          <circle class="f5 a-glow" cx="35" cy="22" r="3"/>
-        </svg>
-        <div class="eyebrow">On the walls</div>
-        <h2 id="wall-h">Photographs by <em>your host.</em></h2>
-        <p>The living room and both bedrooms are hung with Shivam's own photographs. Stay a few nights inside a small, lived-in exhibition, then see more of his work, and his coffee, on Instagram.</p>
-        <a class="btn" href="https://instagram.com/clicksandbrewws" target="_blank" rel="noopener">@clicksandbrewws <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 11 11 3M5 3h6v6"/></svg></a>
-      </div>
-      <div class="pols">
-        <div class="rbadge dk" aria-hidden="true"><svg class="ring" viewBox="0 0 200 200"><defs><path id="rbp2" d="M100 100 m-76 0 a76 76 0 1 1 152 0 a76 76 0 1 1 -152 0"/></defs><text><textPath href="#rbp2" textLength="472" lengthAdjust="spacing">PHOTOGRAPHS BY SHIVAM · ON THE WALLS · </textPath></text></svg><span class="rc"><svg viewBox="150 185 80 80"><use href="#bean"/></svg></span></div>
-        <figure class="pola p1" data-par="-.06"><img src="img/mirror.jpg" decoding="async" alt="A wavy mirror on a bedroom wall" loading="lazy"><figcaption>Bedroom</figcaption></figure>
-        <figure class="pola p2" data-par=".05"><img src="img/lamp.jpg" decoding="async" alt="An amber pendant lamp glowing beside the bed" loading="lazy"><figcaption>Amber</figcaption></figure>
-        <figure class="pola p3" data-par="-.1"><img src="img/bed2.jpg" decoding="async" alt="A king bed with grey linen under two wall lights" loading="lazy"><figcaption>Grey hour</figcaption></figure>
-      </div>
+      <div class="usp-head"><div class="eyebrow" id="stay-h">Five things, every stay</div><p>A cosy 2BHK in Saket Nagar, kept like a boutique hotel.</p></div>
+      <ul class="usps">
+        <li><svg class="ic" viewBox="0 0 56 56" aria-hidden="true"><path class="s f4" d="M10 28h36v6a12 12 0 0 1-12 12H22a12 12 0 0 1-12-12z"/><path class="s" d="M14 28V12a5 5 0 0 1 10 0"/><g class="a-tw"><circle class="f5" cx="38" cy="14" r="2"/><circle class="f5" cx="45" cy="20" r="1.5"/><circle class="f5" cx="32" cy="20" r="1.4"/></g></svg><b>Washrooms cleaned after every checkout</b><span>Both washrooms are deep-cleaned before each new guest arrives.</span></li>
+        <li><svg class="ic" viewBox="0 0 56 56" aria-hidden="true"><rect class="s f4" x="6" y="24" width="44" height="16" rx="3"/><path class="s" d="M10 24v-8a3 3 0 0 1 3-3h30a3 3 0 0 1 3 3v8M6 40v6M50 40v6"/><rect class="s" x="12" y="17" width="12" height="7" rx="2"/></svg><b>Fresh linen &amp; bedsheets</b><span>Crisp, freshly laundered sheets and covers on both king beds.</span></li>
+        <li><svg class="ic" viewBox="0 0 56 56" aria-hidden="true"><path class="s f4" d="M28 8l16 6v12c0 10-7 18-16 22-9-4-16-12-16-22V14z"/><path class="s a-draw" style="--l:30" d="M21 28l5 5 10-11"/></svg><b>Hotel-grade hygiene</b><span>Surfaces, handles and kitchen sanitised between stays.</span></li>
+        <li><svg class="ic" viewBox="0 0 56 56" aria-hidden="true"><rect class="s f4" x="12" y="10" width="26" height="36" rx="3"/><path class="s" d="M12 20h26M38 16h6v24h-6"/><path class="f1" d="M14 38h22v6H14z" opacity=".5"/></svg><b>Premium, sanitised towels</b><span>Plush bath and hand towels, washed and sanitised for you.</span></li>
+        <li><svg class="ic" viewBox="0 0 56 56" aria-hidden="true"><rect class="s f4" x="6" y="12" width="44" height="16" rx="3"/><path class="s" d="M12 22h32"/><g class="a-tw"><path class="s" d="M16 34v8"/><path class="s" d="M28 34v12"/><path class="s" d="M40 34v8"/></g></svg><b>Fully air-conditioned</b><span>AC in both bedrooms and the living room.</span></li>
+      </ul>
     </div>
   </section>
 
   <!-- ======== AROUND YOU ======== -->
-  <section id="around" data-sec="Around you" aria-labelledby="around-h" style="border-top:1px solid var(--hairline)">
+  <section id="around" data-sec="Location" aria-labelledby="around-h" style="border-top:1px solid var(--hairline)">
+    <div class="wrap"><div class="sechead tight"><div><div class="eyebrow">Location</div><h2 style="margin-top:18px">Find your <em>bearings.</em></h2></div><p>Central Saket Nagar, one of Indore's most sought-after neighbourhoods. The best cafes in the city are on your doorstep.</p></div></div>
+    <div class="wrap">
+      <div class="wmap first" id="ruler">
+        <div class="wmap-scroll"><svg class="mapsvg" viewBox="200 0 1650 1060" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Map of the streets around Espresso House in Saket Nagar, showing Neighbourhood Cafe 210 metres and Mr Beans 500 metres away on foot, with June Bakehouse and Deli, Komal's cake shoppe, The Himmi's, The Arab Nama and Saket Square nearby."><rect class="ground" x="200" y="-20" width="1650" height="1100"/><rect class="park" x="693" y="787" width="54" height="63" rx="6"/><rect class="park" x="200" y="50" width="52" height="76" rx="6"/><g class="lanes"><path d="M450 380 L1700 375"/><path d="M440 470 L1700 480"/><path d="M450 700 L1040 670"/><path d="M450 860 L1040 850"/><path d="M440 950 L1030 935"/><path d="M600 1005 L1500 1010"/><path d="M430 1095 L1500 1100"/><path d="M450 300 L1050 270"/><path d="M700 190 L1300 170"/><path d="M250 420 L380 395"/><path d="M250 690 L440 700"/><path d="M250 880 L440 870"/><path d="M1050 740 L1500 750"/><path d="M1050 870 L1300 880"/><path d="M1320 820 L1700 790"/><path d="M1060 470 L1300 490"/><path d="M1330 260 L1560 250"/><path d="M900 100 L1040 95"/><path d="M745 470 L750 1000"/><path d="M870 610 L865 860"/><path d="M950 650 L940 850"/><path d="M1115 320 L1120 560"/><path d="M1175 370 L1170 520"/><path d="M1250 300 L1250 700"/><path d="M1500 640 L1490 1100"/><path d="M1560 50 L1565 500"/><path d="M640 640 L650 950"/><path d="M560 470 L570 1000"/><path d="M1060 330 L1050 1200"/><path d="M850 180 L860 470"/><path d="M1420 380 L1420 640"/><path d="M1620 520 L1640 740"/></g><g class="roads"><path class="rc" stroke-width="37" d="M200 600 L440 585 L1040 575 L1500 598 L1850 625"/><path class="rf" stroke-width="30" d="M200 600 L440 585 L1040 575 L1500 598 L1850 625"/><path class="rc" stroke-width="33" d="M375 0 L385 300 L440 590 L445 1100"/><path class="rf" stroke-width="26" d="M375 0 L385 300 L440 590 L445 1100"/><path class="rc" stroke-width="29" d="M200 175 L300 125 L520 40 L640 -10"/><path class="rf" stroke-width="22" d="M200 175 L300 125 L520 40 L640 -10"/><path class="rc" stroke-width="27" d="M1310 600 L1296 1100"/><path class="rf" stroke-width="20" d="M1310 600 L1296 1100"/><path class="rc" stroke-width="25" d="M1712 740 L1700 1100"/><path class="rf" stroke-width="18" d="M1712 740 L1700 1100"/><path class="rc" stroke-width="23" d="M1365 60 L1360 370"/><path class="rf" stroke-width="16" d="M1365 60 L1360 370"/></g><g class="ring"><path d="M1640 -30 L1800 300 L1860 430 L2000 760" class="r1"/><path d="M1640 -30 L1800 300 L1860 430 L2000 760" class="r2"/><path d="M1640 -30 L1800 300 L1860 430 L2000 760" class="r3"/></g><text class="rn" transform="translate(398 215) rotate(-85)" text-anchor="middle">ANAND BAZAR RD</text><text class="rn" transform="translate(1318 820) rotate(-89)" text-anchor="middle">TELEPHONE NAGAR MAIN RD</text><text class="rn" transform="translate(1366 215) rotate(-90)" text-anchor="middle">SHEETAL NAGAR RD</text><text class="rn lt" transform="translate(1745 380) rotate(65)" text-anchor="middle">EASTERN RING RD</text><text class="rn" transform="translate(700 640) rotate(-2)" text-anchor="middle">MAIN ROAD</text><path class="rt" pathLength="1" style="--dl:.5s" d="M1012 640 L1012 596 L930 582 L820 556 L800 534"/><path class="rt" pathLength="1" style="--dl:1s" d="M1012 640 L1040 664 L1040 930 L748 940 L733 925"/><g transform="translate(530 82)"><g class="mp food" style="--dl:1.5s"><path class="pb" d="M0 0 C-7 -11 -28 -22 -28 -43 a28 28 0 0 1 56 0 C28 -22 7 -11 0 0Z"/><path class="ic2 st" d="M-9 -54v9M-3 -54v9M3 -54v9M-9 -45a6 6 0 0 0 12 0M-3 -45v13"/><path class="ic2 st" d="M10 -54c-4 3 -4 11 0 14v8"/><text class="pl" x="-36" y="-34" text-anchor="end">The Arab Nama</text></g></g><g transform="translate(597 82)"><g class="mp food" style="--dl:1.6s"><path class="pb" d="M0 0 C-7 -11 -28 -22 -28 -43 a28 28 0 0 1 56 0 C28 -22 7 -11 0 0Z"/><path class="ic2 st" d="M-9 -54v9M-3 -54v9M3 -54v9M-9 -45a6 6 0 0 0 12 0M-3 -45v13"/><path class="ic2 st" d="M10 -54c-4 3 -4 11 0 14v8"/><text class="pl" x="36" y="-34" text-anchor="start">The Himmi's</text></g></g><g transform="translate(1043 196)"><g class="mp food" style="--dl:1.7s"><path class="pb" d="M0 0 C-7 -11 -28 -22 -28 -43 a28 28 0 0 1 56 0 C28 -22 7 -11 0 0Z"/><path class="ic2 st" d="M-9 -54v9M-3 -54v9M3 -54v9M-9 -45a6 6 0 0 0 12 0M-3 -45v13"/><path class="ic2 st" d="M10 -54c-4 3 -4 11 0 14v8"/><text class="pl" x="-36" y="-34" text-anchor="end">Komal's cake shoppe</text></g></g><g transform="translate(415 596)"><g class="mp land" style="--dl:1.8s"><path class="pb" d="M0 0 C-7 -11 -28 -22 -28 -43 a28 28 0 0 1 56 0 C28 -22 7 -11 0 0Z"/><path class="ic2" d="M0 -56l9 10l-9 10l-9 -10z"/><text class="pl" x="36" y="-34" text-anchor="start">Saket Square</text></g></g><g transform="translate(460 816)"><g class="mp cafe" style="--dl:1.9s"><path class="pb" d="M0 0 C-7 -11 -28 -22 -28 -43 a28 28 0 0 1 56 0 C28 -22 7 -11 0 0Z"/><path class="ic2" d="M-10 -50h15v10a7.5 7.5 0 0 1 -7.5 7.5h0a7.5 7.5 0 0 1 -7.5 -7.5z"/><path class="ic2 st" d="M5 -48h3a4.2 4.2 0 0 1 0 8.4h-3"/><text class="pl" x="36" y="-34" text-anchor="start">June Bakehouse &amp; Deli</text></g></g><g transform="translate(800 534)"><g class="mp cafe" style="--dl:1.2s"><path class="pb" d="M0 0 C-7 -11 -28 -22 -28 -43 a28 28 0 0 1 56 0 C28 -22 7 -11 0 0Z"/><path class="ic2" d="M-10 -50h15v10a7.5 7.5 0 0 1 -7.5 7.5h0a7.5 7.5 0 0 1 -7.5 -7.5z"/><path class="ic2 st" d="M5 -48h3a4.2 4.2 0 0 1 0 8.4h-3"/><text class="pl" x="-36" y="-34" text-anchor="end">Neighbourhood Cafe</text></g></g><g transform="translate(733 926)"><g class="mp cafe" style="--dl:1.4s"><path class="pb" d="M0 0 C-7 -11 -28 -22 -28 -43 a28 28 0 0 1 56 0 C28 -22 7 -11 0 0Z"/><path class="ic2" d="M-10 -50h15v10a7.5 7.5 0 0 1 -7.5 7.5h0a7.5 7.5 0 0 1 -7.5 -7.5z"/><path class="ic2 st" d="M5 -48h3a4.2 4.2 0 0 1 0 8.4h-3"/><text class="pl" x="-36" y="-34" text-anchor="end">Mr Beans</text></g></g><circle class="pulse" cx="1012" cy="600" r="30"/><g transform="translate(1012 640) scale(1.25)"><g class="mp home" style="--dl:.2s"><path class="pbh" d="M0 0 C-7 -11 -28 -22 -28 -43 a28 28 0 0 1 56 0 C28 -22 7 -11 0 0Z"/><g style="--ba:var(--crema);--bb:var(--paper)" transform="translate(0 -43) rotate(0) scale(.6) translate(-193 -219)"><use href="#bean"/></g></g></g><text class="pl hm" x="1062" y="578">Espresso House</text><g class="bd" style="--dl:1.6s"><rect x="868" y="528" width="96" height="40" rx="20"/><text x="916" y="556" text-anchor="middle">210 m</text></g><g class="bd" style="--dl:2.1s"><rect x="992" y="762" width="96" height="40" rx="20"/><text x="1040" y="790" text-anchor="middle">500 m</text></g><g class="sc"><path d="M240 1030 H350 M240 1020 V1040 M350 1020 V1040"/><text x="295" y="1010" text-anchor="middle">100 M</text></g></svg></div>
+        <ul class="walks">
+          <li><strong>70 m</strong><span>Slrrp Cafe, visible from one of the windows</span></li>
+          <li><strong>200 m</strong><span>Mitti Cafe, kulhad chai and Indian food</span></li>
+          <li><strong>210 m</strong><span>Neighbourhood Cafe, the best coffee in town</span></li>
+          <li><strong>500 m</strong><span>Mr Beans, the retro continental cafe</span></li>
+        </ul>
+        <p class="cap">Streets redrawn from the area map, to give you the lay of the land. Distances are walking distances from the apartment.</p>
+      </div>
+    </div>
     <div class="wrap around">
       <div class="side">
-        <div class="eyebrow">Food &amp; drinks around you</div>
+        <div class="eyebrow">Food &amp; drinks nearby</div>
         <h2 id="around-h" style="margin-top:22px">Walk out, <em>eat well.</em></h2>
         <p class="muted">The host's own picks, from the guide in the apartment. Slrrp Cafe is right by the main gate.</p>
-        <svg class="ic" viewBox="0 0 56 56" aria-hidden="true"><path class="s f4" d="M28 50s-15-14-15-26a15 15 0 0 1 30 0c0 12-15 26-15 26z"/><circle class="f1" cx="28" cy="24" r="6"/><g class="a-tw"><circle class="f5" cx="10" cy="10" r="1.6"/><circle class="f5" cx="46" cy="12" r="1.6"/><circle class="f5" cx="48" cy="40" r="1.6"/></g></svg>
+        
       </div>
       <div>
         <div class="tabs" role="tablist" aria-label="Places">
@@ -1211,16 +1192,68 @@ html{background:var(--paper)}
         <p class="muted" style="margin-top:20px;font-style:italic">Need more suggestions? We're happy to help.</p>
       </div>
     </div>
-    <div class="wrap">
-      <div class="wmap" id="ruler">
-        <div class="wmap-scroll"><svg class="mapsvg" viewBox="200 0 1650 1060" role="img" aria-label="Map of the streets around Espresso House in Saket Nagar, showing Neighbourhood Cafe 210 metres and Mr Beans 500 metres away on foot, with June Bakehouse and Deli, Komal's cake shoppe, The Himmi's, The Arab Nama and Saket Square nearby."><rect class="ground" x="200" y="-20" width="1650" height="1100"/><rect class="park" x="693" y="787" width="54" height="63" rx="6"/><rect class="park" x="200" y="50" width="52" height="76" rx="6"/><g class="lanes"><path d="M450 380 L1700 375"/><path d="M440 470 L1700 480"/><path d="M450 700 L1040 670"/><path d="M450 860 L1040 850"/><path d="M440 950 L1030 935"/><path d="M600 1005 L1500 1010"/><path d="M430 1095 L1500 1100"/><path d="M450 300 L1050 270"/><path d="M700 190 L1300 170"/><path d="M250 420 L380 395"/><path d="M250 690 L440 700"/><path d="M250 880 L440 870"/><path d="M1050 740 L1500 750"/><path d="M1050 870 L1300 880"/><path d="M1320 820 L1700 790"/><path d="M1060 470 L1300 490"/><path d="M1330 260 L1560 250"/><path d="M900 100 L1040 95"/><path d="M745 470 L750 1000"/><path d="M870 610 L865 860"/><path d="M950 650 L940 850"/><path d="M1115 320 L1120 560"/><path d="M1175 370 L1170 520"/><path d="M1250 300 L1250 700"/><path d="M1500 640 L1490 1100"/><path d="M1560 50 L1565 500"/><path d="M640 640 L650 950"/><path d="M560 470 L570 1000"/><path d="M1060 330 L1050 1200"/><path d="M850 180 L860 470"/><path d="M1420 380 L1420 640"/><path d="M1620 520 L1640 740"/></g><g class="roads"><path class="rc" stroke-width="37" d="M200 600 L440 585 L1040 575 L1500 598 L1850 625"/><path class="rf" stroke-width="30" d="M200 600 L440 585 L1040 575 L1500 598 L1850 625"/><path class="rc" stroke-width="33" d="M375 0 L385 300 L440 590 L445 1100"/><path class="rf" stroke-width="26" d="M375 0 L385 300 L440 590 L445 1100"/><path class="rc" stroke-width="29" d="M200 175 L300 125 L520 40 L640 -10"/><path class="rf" stroke-width="22" d="M200 175 L300 125 L520 40 L640 -10"/><path class="rc" stroke-width="27" d="M1310 600 L1296 1100"/><path class="rf" stroke-width="20" d="M1310 600 L1296 1100"/><path class="rc" stroke-width="25" d="M1712 740 L1700 1100"/><path class="rf" stroke-width="18" d="M1712 740 L1700 1100"/><path class="rc" stroke-width="23" d="M1365 60 L1360 370"/><path class="rf" stroke-width="16" d="M1365 60 L1360 370"/></g><g class="ring"><path d="M1640 -30 L1800 300 L1860 430 L2000 760" class="r1"/><path d="M1640 -30 L1800 300 L1860 430 L2000 760" class="r2"/><path d="M1640 -30 L1800 300 L1860 430 L2000 760" class="r3"/></g><text class="rn" transform="translate(398 215) rotate(-85)" text-anchor="middle">ANAND BAZAR RD</text><text class="rn" transform="translate(1318 820) rotate(-89)" text-anchor="middle">TELEPHONE NAGAR MAIN RD</text><text class="rn" transform="translate(1366 215) rotate(-90)" text-anchor="middle">SHEETAL NAGAR RD</text><text class="rn lt" transform="translate(1745 380) rotate(65)" text-anchor="middle">EASTERN RING RD</text><text class="rn" transform="translate(700 640) rotate(-2)" text-anchor="middle">MAIN ROAD</text><path class="rt" pathLength="1" style="--dl:.5s" d="M1012 640 L1012 596 L930 582 L820 556 L800 534"/><path class="rt" pathLength="1" style="--dl:1s" d="M1012 640 L1040 664 L1040 930 L748 940 L733 925"/><g transform="translate(530 82)"><g class="mp food" style="--dl:1.5s"><path class="pb" d="M0 0 C-7 -11 -28 -22 -28 -43 a28 28 0 0 1 56 0 C28 -22 7 -11 0 0Z"/><path class="ic2 st" d="M-9 -54v9M-3 -54v9M3 -54v9M-9 -45a6 6 0 0 0 12 0M-3 -45v13"/><path class="ic2 st" d="M10 -54c-4 3 -4 11 0 14v8"/><text class="pl" x="-36" y="-34" text-anchor="end">The Arab Nama</text></g></g><g transform="translate(597 82)"><g class="mp food" style="--dl:1.6s"><path class="pb" d="M0 0 C-7 -11 -28 -22 -28 -43 a28 28 0 0 1 56 0 C28 -22 7 -11 0 0Z"/><path class="ic2 st" d="M-9 -54v9M-3 -54v9M3 -54v9M-9 -45a6 6 0 0 0 12 0M-3 -45v13"/><path class="ic2 st" d="M10 -54c-4 3 -4 11 0 14v8"/><text class="pl" x="36" y="-34" text-anchor="start">The Himmi's</text></g></g><g transform="translate(1043 196)"><g class="mp food" style="--dl:1.7s"><path class="pb" d="M0 0 C-7 -11 -28 -22 -28 -43 a28 28 0 0 1 56 0 C28 -22 7 -11 0 0Z"/><path class="ic2 st" d="M-9 -54v9M-3 -54v9M3 -54v9M-9 -45a6 6 0 0 0 12 0M-3 -45v13"/><path class="ic2 st" d="M10 -54c-4 3 -4 11 0 14v8"/><text class="pl" x="-36" y="-34" text-anchor="end">Komal's cake shoppe</text></g></g><g transform="translate(415 596)"><g class="mp land" style="--dl:1.8s"><path class="pb" d="M0 0 C-7 -11 -28 -22 -28 -43 a28 28 0 0 1 56 0 C28 -22 7 -11 0 0Z"/><path class="ic2" d="M0 -56l9 10l-9 10l-9 -10z"/><text class="pl" x="36" y="-34" text-anchor="start">Saket Square</text></g></g><g transform="translate(460 816)"><g class="mp cafe" style="--dl:1.9s"><path class="pb" d="M0 0 C-7 -11 -28 -22 -28 -43 a28 28 0 0 1 56 0 C28 -22 7 -11 0 0Z"/><path class="ic2" d="M-10 -50h15v10a7.5 7.5 0 0 1 -7.5 7.5h0a7.5 7.5 0 0 1 -7.5 -7.5z"/><path class="ic2 st" d="M5 -48h3a4.2 4.2 0 0 1 0 8.4h-3"/><text class="pl" x="36" y="-34" text-anchor="start">June Bakehouse &amp; Deli</text></g></g><g transform="translate(800 534)"><g class="mp cafe" style="--dl:1.2s"><path class="pb" d="M0 0 C-7 -11 -28 -22 -28 -43 a28 28 0 0 1 56 0 C28 -22 7 -11 0 0Z"/><path class="ic2" d="M-10 -50h15v10a7.5 7.5 0 0 1 -7.5 7.5h0a7.5 7.5 0 0 1 -7.5 -7.5z"/><path class="ic2 st" d="M5 -48h3a4.2 4.2 0 0 1 0 8.4h-3"/><text class="pl" x="-36" y="-34" text-anchor="end">Neighbourhood Cafe</text></g></g><g transform="translate(733 926)"><g class="mp cafe" style="--dl:1.4s"><path class="pb" d="M0 0 C-7 -11 -28 -22 -28 -43 a28 28 0 0 1 56 0 C28 -22 7 -11 0 0Z"/><path class="ic2" d="M-10 -50h15v10a7.5 7.5 0 0 1 -7.5 7.5h0a7.5 7.5 0 0 1 -7.5 -7.5z"/><path class="ic2 st" d="M5 -48h3a4.2 4.2 0 0 1 0 8.4h-3"/><text class="pl" x="-36" y="-34" text-anchor="end">Mr Beans</text></g></g><circle class="pulse" cx="1012" cy="600" r="30"/><g transform="translate(1012 640) scale(1.25)"><g class="mp home" style="--dl:.2s"><path class="pbh" d="M0 0 C-7 -11 -28 -22 -28 -43 a28 28 0 0 1 56 0 C28 -22 7 -11 0 0Z"/><g style="--ba:var(--crema);--bb:var(--paper)" transform="translate(0 -43) rotate(0) scale(.6) translate(-193 -219)"><use href="#bean"/></g></g></g><text class="pl hm" x="1062" y="578">Espresso House</text><g class="bd" style="--dl:1.6s"><rect x="868" y="528" width="96" height="40" rx="20"/><text x="916" y="556" text-anchor="middle">210 m</text></g><g class="bd" style="--dl:2.1s"><rect x="992" y="762" width="96" height="40" rx="20"/><text x="1040" y="790" text-anchor="middle">500 m</text></g><g class="sc"><path d="M240 1030 H350 M240 1020 V1040 M350 1020 V1040"/><text x="295" y="1010" text-anchor="middle">100 M</text></g></svg></div>
-        <ul class="walks">
-          <li><strong>70 m</strong><span>Slrrp Cafe, visible from one of the windows</span></li>
-          <li><strong>200 m</strong><span>Mitti Cafe, kulhad chai and Indian food</span></li>
-          <li><strong>210 m</strong><span>Neighbourhood Cafe, the best coffee in town</span></li>
-          <li><strong>500 m</strong><span>Mr Beans, the retro continental cafe</span></li>
-        </ul>
-        <p class="cap">Streets redrawn from the area map, to give you the lay of the land. Distances are walking distances from the apartment.</p>
+  </section>
+
+  <!-- ======== THE ARTIST HOST ======== -->
+  <section id="host" class="wall" data-sec="The host" aria-labelledby="host-h">
+    <div class="wrap wallgrid">
+      <div class="wt">
+        <div class="eyebrow">A stay + an art gallery</div>
+        <h2 id="host-h">Meet Shivam, <em>the artist host.</em></h2>
+        <p>Shivam is a photographer and a coffee obsessive, which is exactly what his handle says: clicks and brews. He shoots on a Fujifilm X100VI with a warm, film-like recipe, chasing monsoon streets in Mumbai, golden hour on Marine Drive and, more recently, couples. His first pre-wedding shoot drew over 51,000 likes.</p>
+        <p>Espresso House is that work, made into a home. His prints hang in the living room and both bedrooms, the coffee corner is his own ritual, and the cafes on the map are the ones he actually goes to. The living room also works as a set for shoots, podcasts and small workshops, with his approval.</p>
+        <div class="cta"><a class="btn fill" href="https://instagram.com/clicksandbrewws" target="_blank" rel="noopener">Follow @clicksandbrewws <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 11 11 3M5 3h6v6"/></svg></a><a class="btn" href="https://wa.me/919479419712" target="_blank" rel="noopener"><svg class="bi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3.5 20.5l1.3-4.2A8.5 8.5 0 1 1 8 19.4z"/><path d="M9 8.5c0 3.5 3 6.5 6.5 6.5l1-1.5-2-1-1 1a4 4 0 0 1-2-2l1-1-1-2z"/></svg>Message Shivam</a></div>
+      </div>
+      <div class="pols">
+        <div class="rbadge dk" aria-hidden="true"><svg class="ring" viewBox="0 0 200 200"><defs><path id="rbp2" d="M100 100 m-76 0 a76 76 0 1 1 152 0 a76 76 0 1 1 -152 0"/></defs><text><textPath href="#rbp2" textLength="472" lengthAdjust="spacing">PRINTS BY SHIVAM · @CLICKSANDBREWWS · </textPath></text></svg><span class="rc"><svg viewBox="150 185 80 80"><use href="#bean"/></svg></span></div>
+        <figure class="pola p1" data-par="-.06"><img src="img/mirror.jpg" decoding="async" alt="A wavy mirror on a bedroom wall" loading="lazy"><figcaption>Bedroom</figcaption></figure>
+        <figure class="pola p2" data-par=".05"><img src="img/lamp.jpg" decoding="async" alt="An amber pendant lamp glowing beside the bed" loading="lazy"><figcaption>Amber</figcaption></figure>
+        <figure class="pola p3" data-par="-.1"><img src="img/bed2.jpg" decoding="async" alt="A king bed with grey linen under two wall lights" loading="lazy"><figcaption>Grey hour</figcaption></figure>
+      </div>
+    </div>
+    <div class="wrap"><div class="ig-head"><span class="eyebrow">From his feed</span><span class="eyebrow ig-hint">Swipe <svg viewBox="0 0 22 10" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M0 5h20M16 1l4 4-4 4"/></svg></span></div></div>
+    <div class="igstrip" data-lenis-prevent>
+        <figure class="igp"><div class="igf"><iframe src="https://www.instagram.com/p/Dcfx_t9gFjA/embed/" loading="lazy" title="Instagram post by @clicksandbrewws: His first pre-wedding shoot" scrolling="no" allowtransparency="true"></iframe></div><figcaption>His first pre-wedding shoot</figcaption></figure>
+        <figure class="igp"><div class="igf"><iframe src="https://www.instagram.com/p/DcX30xeANpk/embed/" loading="lazy" title="Instagram post by @clicksandbrewws: Fort, Mumbai, in the rain" scrolling="no" allowtransparency="true"></iframe></div><figcaption>Fort, Mumbai, in the rain</figcaption></figure>
+        <figure class="igp"><div class="igf"><iframe src="https://www.instagram.com/p/DckRJi2DMJ8/embed/" loading="lazy" title="Instagram post by @clicksandbrewws: Golden hour, Marine Drive" scrolling="no" allowtransparency="true"></iframe></div><figcaption>Golden hour, Marine Drive</figcaption></figure>
+        <figure class="igp"><div class="igf"><iframe src="https://www.instagram.com/p/De9FXKmgONt/embed/" loading="lazy" title="Instagram post by @clicksandbrewws: Coffee, of course" scrolling="no" allowtransparency="true"></iframe></div><figcaption>Coffee, of course</figcaption></figure>
+    </div>
+  </section>
+
+  <!-- ======== GALLERY ======== -->
+  <section id="gallery" data-sec="Photos" class="film" aria-labelledby="gal-h">
+    <div class="film-pin" id="fpin">
+      <div class="film-stick" id="fstick">
+        <div class="wrap film-head">
+          <div><div class="eyebrow">Photos · room by room</div>
+            <h2 id="gal-h" style="margin-top:16px">Swipe through <em>the home.</em></h2></div>
+          <p>Nine photographs, side to side. Tap any one to see it full size.</p>
+        </div>
+        <div class="film-track" id="ftrack" data-lenis-prevent>
+          <figure class="plate fp land" tabindex="0"><div class="bracket"><div class="frame"><img src="img/living.jpg" decoding="async" alt="Living room with mustard sofa and orange armchair" loading="lazy"></div></div>
+            <figcaption><b>The living room</b><span class="eyebrow">Plate 01</span></figcaption><span class="d">Corduroy sofa, origami pendant, a 50-inch 4K TV and park light through sheer linen.</span></figure>
+          <figure class="plate fp" tabindex="0"><div class="bracket"><div class="frame"><img src="img/bar.jpg" decoding="async" alt="Walnut breakfast bar with two black stools" loading="lazy"></div></div>
+            <figcaption><b>The bar</b><span class="eyebrow">Plate 02</span></figcaption><span class="d">Walnut counter, two stools, water on a wooden tray.</span></figure>
+          <figure class="plate fp land" tabindex="0"><div class="bracket"><div class="frame"><img src="img/kitchen.jpg" decoding="async" alt="Galley kitchen with dark granite counter, looking through to the living room" loading="lazy"></div></div>
+            <figcaption><b>The kitchen</b><span class="eyebrow">Plate 03</span></figcaption><span class="d">Induction cooktop, chimney, mini fridge and RO+UV drinking water.</span></figure>
+          <figure class="plate fp" tabindex="0"><div class="bracket"><div class="frame"><img src="img/desk.jpg" decoding="async" alt="A wooden desk at an open window, trees outside and leaf shadows on the wall" loading="lazy"></div></div>
+            <figcaption><b>The desk</b><span class="eyebrow">Plate 04</span></figcaption><span class="d">Morning sun, leaf shadows and an open window onto the trees.</span></figure>
+          <figure class="plate fp" tabindex="0"><div class="bracket"><div class="frame"><img src="img/lamp.jpg" decoding="async" alt="A glowing amber pleated pendant lamp beside a striped bed" loading="lazy"></div></div>
+            <figcaption><b>Amber</b><span class="eyebrow">Plate 05</span></figcaption><span class="d">The pleated pendant, after dark.</span></figure>
+          <figure class="plate fp" tabindex="0"><div class="bracket"><div class="frame"><img src="img/bed1.jpg" decoding="async" alt="A king bed with striped linen, an amber pendant and a shelf of frames" loading="lazy"></div></div>
+            <figcaption><b>Bedroom one</b><span class="eyebrow">Plate 06</span></figcaption><span class="d">King bed, striped linen, a shelf of frames.</span></figure>
+          <figure class="plate fp land" tabindex="0"><div class="bracket"><div class="frame"><img src="img/bed1-wide.jpg" decoding="async" alt="Bedroom with a wavy mirror, coat rack and a desk by the window" loading="lazy"></div></div>
+            <figcaption><b>Bedroom two</b><span class="eyebrow">Plate 07</span></figcaption><span class="d">Wavy mirror, coat rack, a desk by the trees.</span></figure>
+          <figure class="plate fp" tabindex="0"><div class="bracket"><div class="frame"><img src="img/bed2.jpg" decoding="async" alt="A king bed with grey linen and striped cushions under two wall lights" loading="lazy"></div></div>
+            <figcaption><b>Grey hour</b><span class="eyebrow">Plate 08</span></figcaption><span class="d">King bed, two reading lights, roman blinds.</span></figure>
+          <figure class="plate fp" tabindex="0"><div class="bracket"><div class="frame"><img src="img/bath2.jpg" decoding="async" alt="Bathroom with a wall-hung toilet and marble-effect tiles" loading="lazy"></div></div>
+            <figcaption><b>The washroom</b><span class="eyebrow">Plate 09</span></figcaption><span class="d">One of two, both stocked with toiletries.</span></figure>
+        </div>
+        <div class="wrap film-bar">
+          <span class="eyebrow" id="fcount">01 / 09</span>
+          <div class="film-line"><i id="fline"></i></div>
+          <span class="eyebrow film-hint">Scroll <svg viewBox="0 0 22 10" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M0 5h20M16 1l4 4-4 4"/></svg></span>
+        </div>
       </div>
     </div>
   </section>
@@ -1339,130 +1372,22 @@ html{background:var(--paper)}
     
   </section>
 
-  <!-- ======== ROOMS ======== -->
-  <section id="rooms" data-sec="Rooms" aria-labelledby="rooms-h">
-    <div class="wrap">
-      <div class="sechead">
-        <div><div class="eyebrow">Inside the apartment</div>
-          <h2 id="rooms-h">Every room, <em>in turn.</em></h2></div>
-        <p>You have the entire apartment: both bedrooms, the living room, the kitchen, the coffee station and the balcony.</p>
-      </div>
-      <div class="rooms">
-        <div class="rooms-list">
-          <article class="rm act" data-i="0" data-name="The living room">
-            <span class="eyebrow">Living room</span>
-            <h3>Warm and inviting</h3>
-            <p>Ambient lighting, a 50-inch 4K TV and air conditioning. The small balcony opens onto a green public park, so the room has a pleasant garden view.</p>
-            <div class="tags"><span class="tag">50-inch 4K TV</span><span class="tag">AC</span><span class="tag">Balcony</span><span class="tag">Park view</span></div>
-            <img class="inl" src="img/living.jpg" decoding="async" alt="" loading="lazy">
-          </article>
-          <article class="rm" data-i="1" data-name="The kitchen">
-            <span class="eyebrow">Kitchen</span>
-            <h3>Open-plan and ready</h3>
-            <p>Attached to the living room, with all the basic essentials for cooking: an induction cooktop, chimney, mini refrigerator and an Aquaguard RO+UV purifier for 24/7 drinking water.</p>
-            <div class="tags"><span class="tag">Induction cooktop</span><span class="tag">Chimney</span><span class="tag">Mini fridge</span><span class="tag">RO+UV water</span></div>
-            <img class="inl" src="img/kitchen.jpg" decoding="async" alt="" loading="lazy">
-          </article>
-          <article class="rm" data-i="2" data-name="The coffee station">
-            <span class="eyebrow">Coffee station</span>
-            <h3>A small corner to brew</h3>
-            <p>Manual brew equipment and a picture guide, so you can experiment at your own pace. The full guide is further up this page.</p>
-            <div class="tags"><span class="tag">French press</span><span class="tag">Brew guide</span></div>
-            <img class="inl" src="img/bar.jpg" decoding="async" alt="" loading="lazy">
-          </article>
-          <article class="rm" data-i="3" data-name="Bedroom one">
-            <span class="eyebrow">Bedroom one</span>
-            <h3>Quiet, with natural light</h3>
-            <p>Comfortable bedding on a king bed, its own AC, a full-length mirror and a luggage rack. Well ventilated, with plenty of daylight.</p>
-            <div class="tags"><span class="tag">King bed</span><span class="tag">AC</span><span class="tag">Full-length mirror</span><span class="tag">Luggage rack</span></div>
-            <img class="inl" src="img/bed1.jpg" decoding="async" alt="" loading="lazy">
-          </article>
-          <article class="rm" data-i="4" data-name="Bedroom two">
-            <span class="eyebrow">Bedroom two</span>
-            <h3>With a desk by the trees</h3>
-            <p>The same comforts, plus a work desk by the window, which makes it a good place to get remote work done.</p>
-            <div class="tags"><span class="tag">King bed</span><span class="tag">AC</span><span class="tag">Work desk</span><span class="tag">Wi-Fi</span></div>
-            <img class="inl" src="img/bed1-wide.jpg" decoding="async" alt="" loading="lazy">
-          </article>
-          <article class="rm" data-i="5" data-name="The washrooms">
-            <span class="eyebrow">Washrooms</span>
-            <h3>Two, both stocked</h3>
-            <p>One is attached to the living room and one to a bedroom. Both come with all the essential toiletries.</p>
-            <div class="tags"><span class="tag">2 washrooms</span><span class="tag">Toiletries</span><span class="tag">Hairdryer</span></div>
-            <img class="inl" src="img/bath1.jpg" decoding="async" alt="" loading="lazy">
-          </article>
-          <article class="rm" data-i="6" data-name="Park and street">
-            <span class="eyebrow">Outside</span>
-            <h3>A park, then the cafes</h3>
-            <p>The living room overlooks a leafy public park, good for evening strolls. A dedicated parking spot is free of charge, subject to availability, with ample safe and legal street parking nearby.</p>
-            <div class="tags"><span class="tag">Free parking</span><span class="tag">Park view</span><span class="tag">Self check-in</span></div>
-            <img class="inl" src="img/desk.jpg" decoding="async" alt="" loading="lazy">
-          </article>
-        </div>
-        <p class="rooms-hint">Swipe for the next room.</p>
-        <div class="rooms-ph" id="rph" aria-hidden="true">
-          <img class="act" src="img/living.jpg" decoding="async" alt="" loading="lazy">
-          <img src="img/kitchen.jpg" decoding="async" alt="" loading="lazy">
-          <img src="img/bar.jpg" decoding="async" alt="" loading="lazy">
-          <img src="img/bed1.jpg" decoding="async" alt="" loading="lazy">
-          <img src="img/bed1-wide.jpg" decoding="async" alt="" loading="lazy">
-          <img src="img/bath1.jpg" decoding="async" alt="" loading="lazy">
-          <img src="img/desk.jpg" decoding="async" alt="" loading="lazy">
-          <span class="rcap" id="rcap">The living room · 1 / 7</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ======== STUDIO ======== -->
-  <section id="studio" data-sec="Studio" aria-labelledby="studio-h">
-    <div class="wrap">
-      <div class="sechead">
-        <div><div class="eyebrow">The living room, by prior approval</div>
-          <h2 id="studio-h">A room made for <em>making things.</em></h2></div>
-        <p>Park-facing windows, sheer curtains for soft daylight, track spots and a room already styled in colour.</p>
-      </div>
-      <div class="studio">
-        <div class="ph"><img src="img/door.jpg" decoding="async" alt="View from a bedroom through a doorway into the bright living room" loading="lazy"></div>
-        <div>
-          <div class="fmt">
-            <svg class="ic" viewBox="0 0 56 56" aria-hidden="true"><rect class="s f4" x="21" y="8" width="14" height="24" rx="7"/><path class="s" d="M15 26a13 13 0 0 0 26 0M28 39v8M21 47h14"/><g class="a-wave"><path class="s" d="M8 22c-2 4-2 8 0 12"/><path class="s" d="M48 22c2 4 2 8 0 12"/><path class="s" d="M4 18c-3 6-3 14 0 20"/></g></svg>
-            <div><h3>Podcasts</h3><p>A quiet room with a sofa and an armchair, set up for two-person conversations.</p></div></div>
-          <div class="fmt">
-            <svg class="ic" viewBox="0 0 56 56" aria-hidden="true"><rect class="s f4" x="6" y="18" width="30" height="22" rx="3"/><path class="s" d="M36 25l12-6v20l-12-6"/><circle class="f1 a-flash" cx="12" cy="24" r="2.2"/><path class="s a-road" d="M6 48h44"/></svg>
-            <div><h3>Content shoots</h3><p>Natural daylight, a styled set and a kitchen that photographs well.</p></div></div>
-          <div class="fmt">
-            <svg class="ic" viewBox="0 0 56 56" aria-hidden="true"><g class="a-bob"><g><circle class="s f4" cx="28" cy="16" r="6"/><path class="s" d="M18 40a10 10 0 0 1 20 0"/></g><g><circle class="s f4" cx="12" cy="24" r="4.5"/><path class="s" d="M4 44a8 8 0 0 1 14-5"/></g><g><circle class="s f4" cx="44" cy="24" r="4.5"/><path class="s" d="M52 44a8 8 0 0 0-14-5"/></g></g><path class="s" d="M8 48h40"/></svg>
-            <div><h3>Small workshops</h3><p>Brewing sessions and small creative classes. The 50-inch 4K TV works as a screen.</p></div></div>
-          <p class="note">Shoots, recordings and workshops need the host's approval before you book. Ask on WhatsApp or Instagram.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  
-
   <!-- ======== DETAILS ======== -->
   <section aria-labelledby="det-h" data-sec="Details" style="border-top:1px solid var(--hairline)">
     <div class="wrap">
       <div class="sechead">
         <div><div class="eyebrow">The details</div>
           <h2 id="det-h">Quietly <em>complete.</em></h2></div>
-        <p>Fresh linen, bath towels and a hand towel are ready when you arrive. Basic cleaning is complimentary.</p>
+        <p>Everything else you'd expect, and a few things you wouldn't.</p>
       </div>
-      <ul class="facts">
-        <li><strong>70 m</strong><span>to the nearest cafe, Slrrp</span></li>
-        <li><strong>2 king beds</strong><span>each room with its own AC</span></li>
-        <li><strong>2 washrooms</strong><span>both fully stocked</span></li>
-        <li><strong>35 amenities</strong><span>on the Airbnb listing</span></li>
-      </ul>
+
       <div class="details">
         <div class="det"><svg class="ic" viewBox="0 0 56 56" aria-hidden="true"><rect class="s f4" x="14" y="8" width="28" height="40" rx="4"/><circle class="s" cx="28" cy="20" r="4"/><g class="a-turn" style="transform-origin:28px 34px;transform-box:view-box"><path class="s" d="M22 34h12M30 34v4"/></g><circle class="f5 a-glow" cx="28" cy="20" r="1.6"/></svg><div><h3>Self check-in</h3><p>A smart lock, so you can arrive when it suits you.</p></div></div>
         <div class="det"><svg class="ic" viewBox="0 0 56 56" aria-hidden="true"><path class="s f4" d="M8 34l4-12a4 4 0 0 1 4-3h24a4 4 0 0 1 4 3l4 12v8H8z"/><path class="s" d="M14 28h28"/><circle class="s f4" cx="17" cy="42" r="4"/><circle class="s f4" cx="39" cy="42" r="4"/><path class="s a-road" d="M4 50h48"/></svg><div><h3>Free parking</h3><p>A dedicated spot when available, plus safe street parking nearby.</p></div></div>
         <div class="det"><svg class="ic" viewBox="0 0 56 56" aria-hidden="true"><g class="a-paw"><g><ellipse class="f1" cx="18" cy="38" rx="5" ry="4"/><circle class="f1" cx="12" cy="31" r="2"/><circle class="f1" cx="16" cy="28" r="2"/><circle class="f1" cx="21" cy="28" r="2"/><circle class="f1" cx="25" cy="31" r="2"/></g><g><ellipse class="f2" cx="38" cy="24" rx="5" ry="4"/><circle class="f2" cx="32" cy="17" r="2"/><circle class="f2" cx="36" cy="14" r="2"/><circle class="f2" cx="41" cy="14" r="2"/><circle class="f2" cx="45" cy="17" r="2"/></g></g></svg><div><h3>Pets welcome</h3><p>Bring your dog along for the stay.</p></div></div>
         <div class="det"><svg class="ic" viewBox="0 0 56 56" aria-hidden="true"><path class="s" d="M6 30h44M12 30v18M44 30v18"/><path class="s" d="M36 30V14l-8-4"/><path class="s f4" d="M22 10h12l-4 6h-4z"/><path class="f5 a-glow" d="M24 16h8l6 12H18z" opacity=".5"/></svg><div><h3>Workspace</h3><p>A window desk in bedroom two and Wi-Fi for remote days.</p></div></div>
         <div class="det"><svg class="ic" viewBox="0 0 56 56" aria-hidden="true"><path class="s f4" d="M28 10s12 13 12 22a12 12 0 0 1-24 0c0-9 12-22 12-22z"/><path class="f3" d="M19 34a9 9 0 0 0 18 0z"/><path class="f3 a-drip" d="M30 2a2 2 0 1 1-4 0c0-1.5 2-3 2-3s2 1.5 2 3z" style="transform:translateY(4px)"/></svg><div><h3>Purified water</h3><p>An RO+UV purifier for drinking water around the clock.</p></div></div>
-        <div class="det"><svg class="ic" viewBox="0 0 56 56" aria-hidden="true"><rect class="s f4" x="6" y="12" width="44" height="16" rx="3"/><path class="s" d="M12 22h32"/><g class="a-tw"><path class="s" d="M16 34v8"/><path class="s" d="M28 34v12"/><path class="s" d="M40 34v8"/></g></svg><div><h3>AC in every room</h3><p>Both bedrooms and the living room.</p></div></div>
+        <div class="det"><svg class="ic" viewBox="0 0 56 56" aria-hidden="true"><rect class="s f4" x="8" y="14" width="40" height="26" rx="3"/><path class="s" d="M20 46h16M28 40v6"/></svg><div><h3>50-inch 4K TV</h3><p>In the living room, with a balcony over the park.</p></div></div>
       </div>
 
       <div class="rules">
@@ -1539,7 +1464,7 @@ html{background:var(--paper)}
         <a class="btn" href="https://wa.me/919479419712" target="_blank" rel="noopener">WhatsApp the host</a>
         <a class="btn" href="https://instagram.com/clicksandbrewws" target="_blank" rel="noopener">Instagram</a>
       </div>
-      <p class="contact">Call <b>7000053900</b> · WhatsApp <b>9479419712</b></p>
+      <p class="contact"><a href="tel:+917000053900">Call <b>7000053900</b></a> · <a href="https://wa.me/919479419712" target="_blank" rel="noopener">WhatsApp <b>9479419712</b></a> · <a href="https://instagram.com/clicksandbrewws" target="_blank" rel="noopener"><b>@clicksandbrewws</b></a></p>
     </div>
   </section>
 </main>
@@ -1552,7 +1477,7 @@ html{background:var(--paper)}
   </div>
 </footer>
 
-<div class="sbar" id="sbar"><span class="eyebrow">//Espresso House//</span><div class="r"><a class="btn" href="#enquire">Enquire</a><a class="btn fill" href="https://www.airbnb.co.uk/rooms/1792507632192727625" target="_blank" rel="noopener">Check dates</a></div></div>
+<div class="sbar" id="sbar"><span class="eyebrow">//Espresso House//</span><div class="r"><a class="btn ico" href="tel:+917000053900" aria-label="Call the host"><svg class="bi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></a><a class="btn ico" href="https://wa.me/919479419712" target="_blank" rel="noopener" aria-label="WhatsApp the host"><svg class="bi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3.5 20.5l1.3-4.2A8.5 8.5 0 1 1 8 19.4z"/><path d="M9 8.5c0 3.5 3 6.5 6.5 6.5l1-1.5-2-1-1 1a4 4 0 0 1-2-2l1-1-1-2z"/></svg></a><a class="btn fill" href="https://www.airbnb.co.uk/rooms/1792507632192727625" target="_blank" rel="noopener">Check dates</a></div></div>
 
 <div class="viewer" data-lenis-prevent id="viewer" hidden role="dialog" aria-modal="true" aria-label="Photo viewer">
   <div class="bar"><span class="eyebrow" id="vno">Plate 01</span><button class="vb" id="vclose" type="button">Close</button></div>
@@ -1659,7 +1584,7 @@ html{background:var(--paper)}
   var pinned=false, tw=0, offs=[], widths=[], lastIdx=-1;
   function measure(){
     setHH();
-    var want=!reduce;
+    var want=false;
     film.classList.toggle('pinned',want); pinned=want;
     if(!want){ pin.style.height=''; track.style.transform=''; fps.forEach(function(f){ f.style.setProperty('--d',0); }); return; }
     pin.style.height='';
