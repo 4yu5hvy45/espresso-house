@@ -1189,6 +1189,46 @@ h2{font-size:clamp(2.5rem,5.6vw,5rem)}
 .list .row b{font-size:clamp(1.35rem,1.9vw,1.7rem)}
 .badge{margin-left:10px;vertical-align:middle}
 .wall .cta{flex-direction:row;align-items:center}.wall .cta .btn{width:auto;flex:0 0 auto}
+
+/* ===== v4 · Airbnb guide, in the Espresso House palette ===== */
+:root{--lift:0 0 0 1px rgba(46,31,20,.04),0 2px 6px rgba(46,31,20,.05),0 6px 14px rgba(46,31,20,.09)}
+.visually-hidden{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+/* soft, friendly shapes: no hard corners on anything you can press */
+.btn{border-radius:10px}
+.tab,.opt span,.chip,.tag{border-radius:999px}
+.badge{border-radius:6px}
+.fm input[type=text],.fm input[type=date],.fm input[type=number],.fm textarea,.pv{border-radius:10px;border:1px solid var(--hairline);min-height:56px;padding:15px 14px;background:var(--card);transition:border-color .2s,box-shadow .2s}
+.fm textarea{min-height:110px}
+.fm input:focus,.fm textarea:focus{outline:none;border-color:var(--espresso);box-shadow:inset 0 0 0 1px var(--espresso)}
+/* one elevation tier */
+.emap,.fm,.igf,.hostcard,.timer{box-shadow:var(--lift)}
+.dark .timer{box-shadow:none}
+.fm{border-radius:20px;border:1px solid var(--hairline)}
+/* the rating: the one loud number on the page */
+.rate{padding-block:clamp(48px,6vw,80px);border-bottom:1px solid var(--hairline);text-align:center}
+.rate-in{display:grid;justify-items:center;gap:14px}
+.rate-score{display:flex;align-items:center;gap:clamp(10px,2vw,22px);color:var(--espresso)}
+.rate-score p{margin:0}
+.rate-score b{font-family:var(--display);font-weight:300;font-size:clamp(4.6rem,11vw,8.4rem);line-height:.9;letter-spacing:-.06em;font-variant-numeric:lining-nums}
+.laurel{width:clamp(30px,4vw,46px);height:auto;color:var(--bean)}
+.laurel.r{transform:scaleX(-1)}
+.rate-line{margin:0;font-family:var(--serif-i);font-style:italic;font-size:clamp(1.1rem,1.6vw,1.35rem);color:var(--roast)}
+.rate .btn{margin-top:8px}
+/* host card */
+.hostcard{margin-top:28px;background:var(--card);border:1px solid var(--hairline);border-radius:16px;padding:22px 24px;display:grid;grid-template-columns:auto minmax(0,1fr);gap:18px 28px;align-items:center;max-width:560px}
+.hc-id{display:flex;align-items:center;gap:14px}
+.hc-av{position:relative;width:58px;height:58px;border-radius:50%;background:var(--espresso);color:var(--crema);display:grid;place-items:center;font-family:var(--serif-i);font-style:italic;font-size:1.7rem;flex:none}
+.hc-av i{position:absolute;right:-4px;bottom:-2px;width:22px;height:22px;border-radius:50%;background:var(--bean);color:var(--linen);font-style:normal;font-size:11px;display:grid;place-items:center;border:2px solid var(--card)}
+.hc-id b{display:block;font-family:var(--display);font-weight:400;font-size:1.45rem;letter-spacing:-.03em;line-height:1.1}
+.hc-id div span{font-family:var(--ui);font-size:13px;color:var(--roast)}
+.hc-stats{margin:0;display:grid;grid-template-columns:repeat(3,auto);justify-content:end;gap:0}
+.hc-stats div{padding:0 16px;border-left:1px solid var(--hairline)}
+.hc-stats div:first-child{border-left:0;padding-left:0}
+.hc-stats dt{font-family:var(--ui);font-size:11px;letter-spacing:.06em;color:var(--roast)}
+.hc-stats dd{margin:2px 0 0;font-family:var(--display);font-weight:400;font-size:1.25rem;letter-spacing:-.02em;white-space:nowrap}
+.wall .hostcard+.cta{margin-top:22px}
+@media (max-width:560px){.hostcard{grid-template-columns:minmax(0,1fr)}.hc-stats{justify-content:start}}
+.hostcard{grid-template-columns:minmax(0,1fr);gap:16px}.hc-stats{justify-content:start;padding-top:16px;border-top:1px solid var(--hairline)}
 </style>
 </head>
 <body>
@@ -1292,6 +1332,15 @@ h2{font-size:clamp(2.5rem,5.6vw,5rem)}
     </div>
   </section>
 
+  <!-- ======== RATING ======== -->
+  <section class="rate" aria-labelledby="rate-h">
+    <div class="wrap rate-in">
+      <div class="rate-score"><svg class="laurel" viewBox="0 0 40 80" aria-hidden="true"><path d="M30 76 C12 62 8 40 16 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><g fill="currentColor"><ellipse cx="11" cy="16" rx="3.4" ry="8" transform="rotate(-28 11 16)"/><ellipse cx="8" cy="30" rx="3.4" ry="8" transform="rotate(-50 8 30)"/><ellipse cx="9" cy="45" rx="3.4" ry="8" transform="rotate(-66 9 45)"/><ellipse cx="14" cy="59" rx="3.4" ry="8" transform="rotate(-80 14 59)"/><ellipse cx="22" cy="8" rx="3" ry="7" transform="rotate(20 22 8)"/><ellipse cx="22" cy="24" rx="3" ry="7" transform="rotate(8 22 24)"/><ellipse cx="21" cy="40" rx="3" ry="7" transform="rotate(-4 21 40)"/><ellipse cx="24" cy="55" rx="3" ry="7" transform="rotate(-20 24 55)"/></g></svg><p id="rate-h"><b>4.98</b><span class="visually-hidden"> out of 5</span></p><svg class="laurel r" viewBox="0 0 40 80" aria-hidden="true"><path d="M30 76 C12 62 8 40 16 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><g fill="currentColor"><ellipse cx="11" cy="16" rx="3.4" ry="8" transform="rotate(-28 11 16)"/><ellipse cx="8" cy="30" rx="3.4" ry="8" transform="rotate(-50 8 30)"/><ellipse cx="9" cy="45" rx="3.4" ry="8" transform="rotate(-66 9 45)"/><ellipse cx="14" cy="59" rx="3.4" ry="8" transform="rotate(-80 14 59)"/><ellipse cx="22" cy="8" rx="3" ry="7" transform="rotate(20 22 8)"/><ellipse cx="22" cy="24" rx="3" ry="7" transform="rotate(8 22 24)"/><ellipse cx="21" cy="40" rx="3" ry="7" transform="rotate(-4 21 40)"/><ellipse cx="24" cy="55" rx="3" ry="7" transform="rotate(-20 24 55)"/></g></svg></div>
+      <p class="rate-line">Rated by 61 guests on Airbnb. Shivam is a Superhost.</p>
+      <a class="btn" href="https://www.airbnb.co.uk/rooms/1792507632192727625#reviews" target="_blank" rel="noopener">Read the reviews</a>
+    </div>
+  </section>
+
   <!-- ======== AROUND YOU ======== -->
   <section id="around" class="loc" data-sec="Location" aria-labelledby="around-h">
     <div class="wrap">
@@ -1360,6 +1409,10 @@ h2{font-size:clamp(2.5rem,5.6vw,5rem)}
         <h2 id="host-h">Meet Shivam, <em>the artist host.</em></h2>
         <p>Shivam is a photographer and a coffee obsessive, which is exactly what his handle says: clicks and brews. He shoots on a Fujifilm X100VI with a warm, film-like recipe, chasing monsoon streets in Mumbai, golden hour on Marine Drive and, more recently, couples. His first pre-wedding shoot drew over 51,000 likes.</p>
         <p>Espresso House is that work, made into a home. His prints hang in the living room and both bedrooms, the coffee corner is his own ritual, and the cafes on the map are the ones he actually goes to. The living room also works as a set for shoots, podcasts and small workshops, with his approval.</p>
+        <div class="hostcard">
+          <div class="hc-id"><span class="hc-av" aria-hidden="true">S<i>★</i></span><div><b>Shivam</b><span>Superhost · 2 years hosting</span></div></div>
+          <dl class="hc-stats"><div><dt>Rating</dt><dd>4.98</dd></div><div><dt>Reviews</dt><dd>61</dd></div><div><dt>Replies</dt><dd>On WhatsApp</dd></div></dl>
+        </div>
         <div class="cta"><a class="btn fill" href="https://instagram.com/clicksandbrewws" target="_blank" rel="noopener">Follow @clicksandbrewws <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 11 11 3M5 3h6v6"/></svg></a><a class="btn" href="https://wa.me/919479419712" target="_blank" rel="noopener"><svg class="bi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3.5 20.5l1.3-4.2A8.5 8.5 0 1 1 8 19.4z"/><path d="M9 8.5c0 3.5 3 6.5 6.5 6.5l1-1.5-2-1-1 1a4 4 0 0 1-2-2l1-1-1-2z"/></svg>Message Shivam</a></div>
       </div>
       <div class="pols">
